@@ -1,0 +1,379 @@
+//|==========================================================================================|\\
+//|         *************************Evento poring da sorte*************************         |\\
+//|==========================================================================================|\\
+prontera,130,215,6	script	Caçada Poring	508,{
+	if(getgmlevel()==99)
+		set .@m$,"Manipular evento";
+	set .nome$,"[^FF9A00Caçada Poring^000000]";//Nome do NPC
+	mes .nome$;
+	mes "Olá ^FF4500"+strcharinfo(0)+"^000000!";
+	mes "Horário de abertura a cada 1 hora.";
+	mes "Iniciando em 10:35, 11:35, 12:35...";
+	mes "O que deseja fazer?";
+	mes "Seu saldo de pontos é: ^0000FF"+Ponto+"^000000";
+	switch(select("Entrar no Evento","Trocar pontos","Informações",.@m$))
+	{
+		case 1:
+			next;
+			if($eventocacada == 1){
+				mes .nome$;
+				mes "^ff6600Boa sorte!^000000";
+				next;
+				warp "moonhaven",0,0; 
+				end;
+			} else {
+				mes .nome$;
+				mes "^ff6600O evento está fechado!^000000";
+				close;
+			}
+		case 2:
+			next;
+			mes .nome$;
+			mes "Você deseja troca seus pontos por algum destes itens?";
+			mes "^6495ED"+getitemname($Item1)+"^000000 = "+$Pontos1+" Pontos";
+			mes "^6495ED"+getitemname($Item2)+"^000000 = "+$Pontos2+" Pontos";
+			mes "^6495ED"+getitemname($Item3)+"^000000 = "+$Pontos3+" Pontos";
+			next;
+			if(select("Sim","Não")==2)
+				close;
+			mes .nome$;
+			mes "Esolha o que você deseja.";
+			switch(select(getitemname($Item1),getitemname($Item2),getitemname($Item3)))
+			{
+				case 1:
+					next;
+					mes .nome$;
+					mes "Digite a quantidade de ^6495ED"+getitemname($Item1)+"^000000 que você deseja.";
+					input @Quantia;
+					if (@Quantia==0) close;
+					if(Ponto < $Pontos1*@Quantia){
+						next;
+						mes .nome$;
+						mes "Você não tem pontos para retirar essa quantia de ^6495ED"+getitemname($Item1)+"^000000.";
+						close;
+					}
+					next;
+					mes .nome$;
+					mes "Muito bem aqui está seu premio!";
+					set Ponto,Ponto-$Pontos1*@Quantia;
+					getitem $Item1,@Quantia;
+					close;
+				case 2:
+					next;
+					mes .nome$;
+					mes "Digite a quantidade de ^6495ED"+getitemname($Item2)+"^000000 que você deseja.";
+					input @Quantia;
+					if (@Quantia==0) close;
+					if(Ponto < $Pontos2*@Quantia){
+						next;
+						mes .nome$;
+						mes "Você não tem pontos para retirar essa quantia de ^6495ED"+getitemname($Item2)+"^000000.";
+						close;
+					}
+					next;
+					mes .nome$;
+					mes "Muito bem aqui está seu premio!";
+					set Ponto,Ponto-$Pontos2*@Quantia;
+					getitem $Item2,@Quantia;
+					close;
+				case 3:
+					next;
+					mes .nome$;
+					mes "Digite a quantidade de ^6495ED"+getitemname($Item3)+"^000000 que você deseja.";
+					input @Quantia;
+					if (@Quantia==0) close;
+					if(Ponto < $Pontos3*@Quantia){
+						next;
+						mes .nome$;
+						mes "Você não tem pontos para retirar essa quantia de ^6495ED"+getitemname($Item3)+"^000000.";
+						close;
+					}
+					next;
+					mes .nome$;
+					mes "Muito bem aqui está seu premio!";
+					set Ponto,Ponto-$Pontos3*@Quantia;
+					getitem $Item3,@Quantia;
+					close;
+			}
+		case 3:
+			next;
+			mes .nome$;
+			mes "O evento funciona da seguinte forma:";
+			next;
+			mes .nome$;
+			mes "Os jogadores são enviados em uma cordenada aleatória do mapa.";
+			mes "Em seguida é começado o 1º round.";
+			mes "Os jogadores precisam matar todos os porings para avançar para o próximo round.";
+			next;
+			mes .nome$;
+			mes "Cada poring da sorte vale uma quantidade de pontos de acordo com seu tipo:";
+			next;
+			mes .nome$;
+			mes "Poring ^FF8DDCROSA^000000= 1 ponto";
+			mes "Poring ^FFAB00LARANJA^000000= 2 pontos";
+			mes "Poring ^1DC400VERDE^000000= 3 pontos";
+			mes "Poring ^0000FFAZUL^000000= 4 pontos";
+			mes "Poring ^9500FFROXO^000000= 5 pontos";
+			mes "Poring ^944C00TERRA^000000= 10 pontos";
+			mes "Poring ^EB2B00FOGO^000000= 20 pontos";
+			mes "Poring ^00CDFFAGUA^000000= 30 pontos.";
+			mes "Poring ^B4BAFFANJO^000000= 50 pontos.";
+			mes "Poring ^909090PRINCIPE^000000= 100 pontos.";
+			mes "	^000000REI^000000= 1000 pontos.";
+			next;
+			mes .nome$;
+			mes "No 3º e último round é invocado o Rei Poring que vale 1000 pontos.";
+			mes "Após o Rei Poring morrer ou 10 minutos se passarem desde o inicio do 1º round o evento é finalizado.";
+			next;
+			mes .nome$;
+			mes "Os pontos adquiridos no evento podem ser trocados por prêmios no próprio NPC Caçada Poring.";
+			close;
+		case 4:
+			next;
+			mes .nome$;
+			mes "O que deseja fazer ^FF4500"+strcharinfo(0)+"^000000?";
+			mes "Os premios são:";
+			mes "^6495ED"+getitemname($Item1)+"^000000 = "+$Pontos1+" Pontos";
+			mes "^6495ED"+getitemname($Item2)+"^000000 = "+$Pontos2+" Pontos";
+			mes "^6495ED"+getitemname($Item3)+"^000000 = "+$Pontos3+" Pontos";
+			switch(select("Mudar Premio","Abrir Evento","Finalizar Evento"))
+			{
+				case 1:
+					next;
+					mes .nome$;
+					mes "Informe o ID do primeiro item para ser o Prêmio.";
+					input $Item1;
+					next;
+					mes .nome$;
+					mes "Informe a quantidade de pontos para trocar pelo item.";
+					input $Pontos1;
+					next;
+					mes .nome$;
+					mes "Informe o ID do segundo item para ser o Prêmio.";
+					input $Item2;
+					next;
+					mes .nome$;
+					mes "Informe a quantidade de pontos para trocar pelo item.";
+					input $Pontos2;
+					next;
+					mes .nome$;
+					mes "Informe o ID do terceiro item para ser o Prêmio.";
+					input $Item3;
+					next;
+					mes .nome$;
+					mes "Informe a quantidade de pontos para trocar pelo item.";
+					input $Pontos3;
+					mes "Feito.";
+					close;
+				case 2:
+					next;
+					mes .nome$;
+					mes "O evento será iniciado.";
+					close2;
+					dispbottom "[Caçada Poring] Evento aberto";
+					goto IniciarEvento;
+				case 3:
+					next;
+					mes .nome$;
+					mes "O evento será finalizado.";
+					close2;
+					announce "O Evento [Caçada Poring] finalizou!",bc_all,0x00FFFF;
+					dispbottom "[Caçada Poring] Evento finalizado";
+					goto FinalizarEvento;
+			}
+	}
+
+	OnInit:
+		bindatcmd "poring",strnpcinfo(3)+"::OnAtcommand";
+		waitingroom "Caçada Poring",0;
+		end;
+
+	OnAtcommand:
+		if(getgroupid() == 99){
+			mes "[^FF9A00Caçada Poring^000000]";
+			mes "O que deseja fazer ^FF4500"+strcharinfo(0)+"^000000?";
+			switch (select("Abrir Evento","Finalizar Evento","Próximo Round","Iniciar Agora!"))
+			{
+				case 1:
+					close2;
+					dispbottom "[Caçada Poring] Evento aberto";
+					goto IniciarEvento;
+				case 2:
+					close2;
+					announce "O Evento [Caçada Poring] finalizou!",bc_all,0x00FFFF;
+					dispbottom "[Caçada Poring] Evento finalizado";
+					goto FinalizarEvento;
+				case 3:
+					close2;
+					dispbottom "[Caçada Poring] Precisa estar no 1º ou 2º round.";
+					if ($round==1||$round==2) {
+						set $mob,1;
+						goto MobMorreu;
+					}
+				case 4:
+					close2;
+					dispbottom "[Caçada Poring] O evento precisa estar aberto.";
+					if ($eventocacada==1) {
+						setnpctimer 119999,"Caçada Poring";
+					}
+			}
+		}
+		end;
+
+	OnMinute35:
+		goto IniciarEvento;
+
+	IniciarEvento:
+		announce "O Evento [Caçada Poring] está aberto, você tem 2 minutos para entrar!",bc_all,0x00FFFF;
+		initnpctimer;
+		set $eventocacada,1;
+		end;
+
+	OnTimer60000:
+		announce "O Evento [Caçada Poring] vai iniciar em 1 minuto!",bc_all,0x00FFFF;
+		end;
+
+	OnTimer120000:
+		set $eventocacada,0;
+		announce "O Evento [Caçada Poring] fechou!",bc_all,0x00FFFF;
+		set $round,1;
+		goto ProximoRound;
+
+	OnTimer660000:
+		mapannounce "moonhaven","A caçada vai terminar em 1 minuto.",bc_all,0xAAFF00;
+		end;
+
+	OnTimer720000:
+		if ($round==3) {
+			mapannounce "moonhaven","O tempo acabou! O Rei Poring sobreviveu...",bc_all,0xAAFF00;
+		} else {
+			mapannounce "moonhaven","O tempo acabou! Restaram "+$mob+" porings para o próximo round",bc_all,0xAAFF00;
+		}
+		goto FinalizarEvento;
+
+	ProximoRound:
+		if ($round==1) {
+			mapannounce "moonhaven","1º round começou!",bc_all,0xAAFF00;
+			set $mob,510;
+			monster "moonhaven",0,0,"Poring Rosa",2909,200,""+strnpcinfo(1)+"::OnMorreuRosa";
+			monster "moonhaven",0,0,"Poring Laranja",2911,150,""+strnpcinfo(1)+"::OnMorreuLaranja";
+			monster "moonhaven",0,0,"Poring Verde",2910,100,""+strnpcinfo(1)+"::OnMorreuVerde";
+			monster "moonhaven",0,0,"Poring Azul",2912,50,""+strnpcinfo(1)+"::OnMorreuAzul";
+			monster "moonhaven",0,0,"Poring Roxo",2904,10,""+strnpcinfo(1)+"::OnMorreuRoxo";
+		}
+		if ($round==2) {
+			set $mob,68;
+			mapannounce "moonhaven","2º round começou!",bc_all,0xAAFF00;
+			monster "moonhaven",0,0,"Poring da Terra",2907,50,""+strnpcinfo(1)+"::OnMorreuTerra";
+			monster "moonhaven",0,0,"Poring do Fogo",2906,10,""+strnpcinfo(1)+"::OnMorreuFogo";
+			monster "moonhaven",0,0,"Poring da Agua",2903,5,""+strnpcinfo(1)+"::OnMorreuAgua";
+			monster "moonhaven",0,0,"Poring Anjo",2905,2,""+strnpcinfo(1)+"::OnMorreuAnjo";
+			monster "moonhaven",0,0,"Principe Poring",2908,1,""+strnpcinfo(1)+"::OnMorreuPrincipe";
+		}
+		if ($round==3) {
+			set $mob,1;
+			mapannounce "moonhaven","3º round começou!",bc_all,0xAAFF00;
+			monster "moonhaven",0,0,"Rei Poring",2902,1,""+strnpcinfo(1)+"::OnRei";
+		}
+		end;
+
+	OnMorreuRosa:
+		set Ponto,Ponto+1;
+		goto MobMorreu;
+
+	OnMorreuLaranja:
+		set Ponto,Ponto+2;
+		goto MobMorreu;
+
+	OnMorreuVerde:
+		set Ponto,Ponto+3;
+		goto MobMorreu;
+
+	OnMorreuAzul:
+		set Ponto,Ponto+4;
+		goto MobMorreu;
+
+	OnMorreuRoxo:
+		set Ponto,Ponto+5;
+		goto MobMorreu;
+
+	OnMorreuTerra:
+		set Ponto,Ponto+10;
+		goto MobMorreu;
+
+	OnMorreuFogo:
+		set Ponto,Ponto+20;
+		goto MobMorreu;
+
+	OnMorreuAgua:
+		set Ponto,Ponto+30;
+		goto MobMorreu;
+
+	OnMorreuAnjo:
+		set Ponto,Ponto+50;
+		goto MobMorreu;
+
+	OnMorreuPrincipe:
+		set Ponto,Ponto+100;
+		goto MobMorreu;
+
+	OnRei:
+		set Ponto,Ponto+1000;
+		set @randcoin, rand(50,100);
+		set #CASHPOINTS,#CASHPOINTS+@randcoin;
+		announce "[Caçada Poring] O Rei Poring foi morto por "+strcharinfo(0)+"! Sua recompensa é: 1000 pontos + "+@randcoin+" Coins!",bc_all,0xFF70FF;
+//		mapannounce "moonhaven","Parabéns "+strcharinfo(0)+"! você exterminou o Rei Poring!",bc_all,0xAAFF00;
+//		dispbottom "Sua recompensa é: 1000 pontos + ^ff0000"+@randcoin+"^000000 Coins!";
+		sleep 3000;
+		goto MobMorreu;
+
+	MobMorreu:
+		set $mob,$mob-1;
+		if($mob == 200) mapannounce "moonhaven","Faltam 200 porings",bc_all,0xAAFF00;
+		if($mob == 50) mapannounce "moonhaven","Faltam 50 porings",bc_all,0xAAFF00;
+		if($mob == 10) mapannounce "moonhaven","Faltam 10 porings",bc_all,0xAAFF00;
+		if($mob == 1) mapannounce "moonhaven","Falta 1 poring",bc_all,0xAAFF00;
+		if($mob == 0) {
+			mapannounce "moonhaven","Todos os porings foram mortos.",bc_all,0xAAFF00;
+			killmonsterall "moonhaven";
+			sleep 3000;
+			if ($round==1) {
+				set $round,2;
+				goto ProximoRound;
+			}
+			if ($round==2) {
+				set $round,3;
+				goto ProximoRound;
+			}
+			if ($round==3) {
+				mapannounce "moonhaven","A caçada poring terminou...",bc_all,0xAAFF00;
+				sleep 3000;
+				goto FinalizarEvento;
+			}
+		}
+		end;
+
+	FinalizarEvento:
+		mapwarp "moonhaven","prontera",156,182;
+		sleep 1000;
+		killmonsterall "moonhaven";
+		set $round,0;
+		set $eventocacada,0;
+		set $mob,0;
+		initnpctimer;
+		stopnpctimer;
+		end;
+
+	end;
+}
+// Map-Flags
+moonhaven	mapflag	nowarp
+moonhaven	mapflag	nowarpto
+moonhaven	mapflag	noteleport
+moonhaven	mapflag	nosave	SavePoint
+moonhaven	mapflag	nomemo
+moonhaven	mapflag	nobranch
+moonhaven	mapflag	nopenalty
+moonhaven	mapflag	monster_noteleport
+moonhaven	mapflag	noreturn
+moonhaven	mapflag	noskill

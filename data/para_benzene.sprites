@@ -1,0 +1,6 @@
+<sprites>
+    <sprite x="131.118576" y="52.951538" z="260.400269" action="0" direction="0">
+        <body>data\sprite\인간족\몸통\남\성직자_남</body>
+        <head>data\sprite\인간족\머리통\남\14_남</head>
+    </sprite>
+</sprites>

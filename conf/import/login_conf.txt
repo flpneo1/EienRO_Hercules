@@ -1,0 +1,8 @@
+new_account: yes
+//client_hash_check: on
+// Hashes MD5 do client
+// Um jogador por logar com um hash do client de seu grupo ou grupos inferiores.
+// Formato: id_do_grupo, hash
+client_hash: 0, CC637D9ED1FBFF0B9957967D55FE648C
+client_hash: 99, CC637D9ED1FBFF0B9957967D55FE648C
+client_hash: 99, enabled

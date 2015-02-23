@@ -1,0 +1,105 @@
+//===== Hercules Script ======================================
+//= Reset NPC
+//===== By: ==================================================
+//= Hercules Dev Team
+//===== Current Version: =====================================
+//= 1.3
+//===== Description: =========================================
+//= Resets skills, stats, or both.
+//===== Additional Comments: =================================
+//= 1.0 First Version
+//= 1.1 Optimized for the greater good. [Kisuka]
+//= 1.2 Cleaning [Euphy]
+//= 1.3 All statuses removed upon skill reset. [Euphy]
+//============================================================
+
+prontera,150,193,4	script	Eureka	533,{
+
+	set .@ResetStat,10000000;	// Zeny for stat reset
+	set .@ResetSkill,10000000;	// Zeny for skill reset
+	set .@ResetBoth,18000000;	// Zeny for resetting both together
+
+	mes "[Eureka]";
+	mes "Olá "+strcharinfo(0)+"!";
+	mes "Eu posso resetar seus pontos de status e habilidades.";
+	mes "Resetar Status: ^FF335510kk de Zenys^000000";//+ .@ResetStat +"z";
+	mes "Resetar Skills: ^FF335510kk de Zenys^000000";//+ .@ResetSkill +"z";
+	mes "Resetar Ambos: ^FF335518kk de Zenys^000000";//+ .@ResetBoth +"z";
+	mes "Por favor, selecione o serviço que deseja:";
+	next;
+	switch(select("Resetar Skills:Resetar Status:Resetar Ambos:Cancelar")) {
+	case 1:
+		mes "[Eureka]";
+		if (Zeny < .@ResetSkill) {
+			mes "Desculpe, você não tem a quantidade de Zeny necessária.";
+			close;
+		}
+		set Zeny, Zeny-.@ResetSkill;
+		sc_end SC_ALL;
+		resetskill;
+		mes "E...";
+		next;
+		mes "[Eureka]";
+		mes "...";
+		next;
+		mes "[Eureka]";
+		mes "EUREKA!!!";
+		atcommand "@effect "+8;
+		next;
+		mes "[Eureka]";
+		mes "Está pronto! ^^";
+		if ((contallskill>0)) { //conjunto com o mestre das classes
+			set resetallskill,1;
+			mes "Se querer pegar todas suas habilidades novamente é só falar com ^FF3355Simon, o mestre das classes^000000";
+		}
+		close;
+	case 2:
+		mes "[Eureka]";
+		if (Zeny < .@ResetStat) {
+			mes "Desculpe, você não tem a quantidade de Zeny necessária.";
+			close;
+		}
+		set Zeny, Zeny-.@ResetStat;
+		resetstatus;
+		mes "E...";
+		next;
+		mes "[Eureka]";
+		mes "...";
+		next;
+		mes "[Eureka]";
+		mes "EUREKA!!!";
+		atcommand "@effect "+8;
+		next;
+		mes "[Eureka]";
+		mes "Está pronto! ^^";
+		close;
+	case 3:
+		mes "[Eureka]";
+		if (Zeny < .@ResetBoth) {
+			mes "Desculpe, você não tem a quantidade de Zeny necessária.";
+			close;
+		}
+		set Zeny, Zeny-.@ResetBoth;
+		sc_end SC_ALL;
+		resetskill;
+		resetstatus;
+		mes "E...";
+		next;
+		mes "[Eureka]";
+		mes "...";
+		next;
+		mes "[Eureka]";
+		mes "EUREKA!!!";
+		atcommand "@effect "+8;
+		next;
+		mes "[Eureka]";
+		mes "Está pronto! ^^";
+		if ((contallskill>0)) { //conjunto com o mestre das classes
+			set resetallskill,1;
+			mes "Se querer pegar todas suas habilidades novamente é só falar com ^FF3355Simon, o mestre das classes^000000";
+		}
+		close;
+	case 4:
+		close;
+	}
+}
