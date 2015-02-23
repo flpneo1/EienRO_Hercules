@@ -1,6 +1,6 @@
 //exp.conf------------------------
-base_exp_rate: 500000
-job_exp_rate: 500000
+base_exp_rate: 100000
+job_exp_rate: 100000
 multi_level_up: yes
 exp_bonus_attacker: 1000
 mvp_exp_rate: 5000

@@ -1,4 +1,4 @@
-new_account: yes
+new_account: no
 //client_hash_check: on
 // Hashes MD5 do client
 // Um jogador por logar com um hash do client de seu grupo ou grupos inferiores.
