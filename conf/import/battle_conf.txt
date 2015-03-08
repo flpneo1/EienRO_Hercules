@@ -67,6 +67,7 @@ mail_show_status: 2
 
 //monster.conf--------------------
 monster_max_aspd: 195
+override_mob_names: 2
 mob_count_rate: 100
 show_mob_info: 6
 ksprotection: 5000
