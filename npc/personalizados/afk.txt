@@ -28,15 +28,15 @@
 }
 
 //Matar monstros invocados na arena
--	script	killmonster	-1,{
-	OnPCLoadMapEvent:
-		if(strcharinfo(3) == "arena"){
-			sleep2 1500;
-			atcommand "@killmonster2";
-		}
-		end;
+//-	script	killmonster	-1,{
+//	OnPCLoadMapEvent:
+//		if(strcharinfo(3) == "arena"){
+//			sleep2 1500;
+//			atcommand "@killmonster2";
+//		}
+//		end;
 
-	OnInit:
-		setmapflag	"arena",mf_loadevent;
-		end;
-}
+//	OnInit:
+//		setmapflag	"arena",mf_loadevent;
+//		end;
+//}

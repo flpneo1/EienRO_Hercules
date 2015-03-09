@@ -69,6 +69,9 @@ prontera,154,198,5	script	Duelista::Arenax1	666,1,1,{
 			set @pontos,0;
 		dispbottom "Seus pontos são: "+@pontos;
 		warp "arena",33,50;
+		sleep2 3000;
+		if(strcharinfo(3) == "arena")
+			atcommand "@killmonster2";
 	} else {
 		mes .nome$;
 		mes  "Você precisa sair do seu grupo";
