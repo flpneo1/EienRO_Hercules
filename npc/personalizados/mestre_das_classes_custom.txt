@@ -152,7 +152,7 @@ function Job_Menu; function A_An;
 		}
 	if ((.@eac&EAJ_BASEMASK) == EAJ_NOVICE) {
 		if (JobLevel < .JobReq[0])
-			mes "A job level of "+.JobReq[0]+" is required to change into the 1st Class.";
+			mes "É necessário possuir nível de classe "+.JobReq[0]+" para mudar para a Primeira Classe.";
 		else if (Class == 4001 && .LastJob && lastJob) {
 			mes "Mudar de classe agora?";
 			next;
