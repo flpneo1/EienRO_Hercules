@@ -10,13 +10,13 @@
 		end;
 	OnCheck:
 		getmapxy( .@map$, .@x, .@y, 0 );
-		if (.@map$==@map$ && .@x==@x && .@y==@y) {//verifica se são as mesmas cordenadas map,x,y (afk)
+		if(.@map$==@map$ && .@x==@x && .@y==@y) {//verifica se são as mesmas cordenadas map,x,y (afk)
 			set @idle_seconds, @idle_seconds + .interval;
 		} else { // senao reseta o tempo pra 0
 			set @idle_seconds, 0;
 		}
 		set @map$,.@map$; set @x,.@x; set @y,.@y;//atualiza cordenada
-		if (@idle_seconds >= .max_idle) {//se atingir o limite
+		if((@idle_seconds >= .max_idle)&&(@tempoafk==0)) {//se atingir o limite
 			dispbottom "Você ficou mais de 20 minutos ausente.";
 			dispbottom "Tempo online interrompido, relogue novamente para ativar.";
 			set @tempoafk,1;

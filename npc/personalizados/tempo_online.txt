@@ -12,7 +12,7 @@ end;
 		end;
 
 	//A cada 1 hora
-	OnTimer600000:
+	OnTimer360000:
 //	OnTimer3600000:
 		set @horas_online, @horas_online + 1;
 		if(@horas_online==1)
@@ -38,6 +38,7 @@ end;
 		if(@tempo_premio>=300){
 			set @tempo_premio,0;
 			set @tempo_on_rand,0;
+			dispbottom "O tempo para pegar seu prêmio acabou.";
 			end;
 		}
 		addtimer 1000, strnpcinfo(3)+"::OnTempoPremio";
@@ -49,8 +50,9 @@ prontera,182,215,5	script	Relojoeiro::RelojoeiroProntera	804,{
 	mes .nome$;
 	mes "Sou o relojoeiro de Prontera...";
 	if(@tempo_on_rand==1){
-		mes "Seu prêmio";
-		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+		mes "Já sei porque veio falar cocmigo...";
+		mes "Pegue seu prêmio.";
+		callfunc "pegapremio";
 		set @tempo_on_rand,0;
 	}
 	close;
@@ -60,8 +62,9 @@ morocc,169,105,5	script	Relojoeiro::RelojoeiroMorroc	804,{
 	mes .nome$;
 	mes "Sou o relojoeiro de Morroc...";
 	if(@tempo_on_rand==2){
-		mes "Seu prêmio";
-		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+		mes "Já sei porque veio falar cocmigo...";
+		mes "Pegue seu prêmio.";
+		callfunc "pegapremio";
 		set @tempo_on_rand,0;
 	}
 	close;
@@ -71,8 +74,9 @@ geffen,127,64,5	script	Relojoeiro::RelojoeiroGeffen	804,{
 	mes .nome$;
 	mes "Sou o relojoeiro de Geffen...";
 	if(@tempo_on_rand==3){
-		mes "Seu prêmio";
-		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+		mes "Já sei porque veio falar cocmigo...";
+		mes "Pegue seu prêmio.";
+		callfunc "pegapremio";
 		set @tempo_on_rand,0;	
 	}
 	close;
@@ -82,8 +86,9 @@ payon,165,222,5	script	Relojoeiro::RelojoeiroPayon	804,{
 	mes .nome$;
 	mes "Sou o relojoeiro de Payon...";
 	if(@tempo_on_rand==4){
-		mes "Seu prêmio";
-		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+		mes "Já sei porque veio falar cocmigo...";
+		mes "Pegue seu prêmio.";
+		callfunc "pegapremio";
 		set @tempo_on_rand,0;
 	}
 	close;
