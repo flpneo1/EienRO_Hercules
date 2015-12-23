@@ -12,8 +12,8 @@ end;
 		end;
 
 	//A cada 1 hora
-	OnTimer360000:
-//	OnTimer3600000:
+//	OnTimer360000:
+	OnTimer3600000:
 		set @horas_online, @horas_online + 1;
 		if(@horas_online==1)
 			dispbottom "Você está a 1 hora logado";
