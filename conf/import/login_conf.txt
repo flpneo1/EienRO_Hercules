@@ -5,4 +5,5 @@ client_hash_check: on
 // Formato: id_do_grupo, hash
 client_hash: 0, C27DB7822569FABDDF63F0DFCF0C9314//local
 client_hash: 0, 6CED31195787E7626EDBC78D7D2F91E9//online
-client_hash: 99, disabled//permite usuario ADM usar qualquer .exe
+//client_hash: 99, disabled//permite usuario ADM usar qualquer .exe ???
+//client_hash: 99, 43f7992491376055a541cfe981f16274//area da visao 75% zoom

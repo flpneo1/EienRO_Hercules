@@ -12,3 +12,11 @@ prontera,140,227,6	script	Khellisia::Quests	894,{
 	cutin "",255;
 	end;
 }
+
+//OnPCLoadMapEvent:
+//		getmapxy @map$,@x,@y,0;
+//		if(@map$ == "arena") {
+//			set @duelando,0;
+//		}
+//		if(strcharinfo(3) == strnpcinfo(4))
+//			showevent QTYPE_QUEST,1;//mostra balão de quest

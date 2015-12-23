@@ -1,51 +1,90 @@
 //== Autor: ===================================
 //== Neo
 //=============================================
--	script	PointsTimer	-1,{
-	end;
+-	script	TempoOnline	-1,{
+end;
 
-//	OnHit:
-//		set Zeny, Zeny+5;
-//		dispbottom "Você hitou!";
-//	end;
-	
 	OnPCLoginEvent:
-		//if( .modo )
-		//{
-			if( #ponto )
-				set #ponto,0;
-			attachnpctimer;
-			initnpctimer;
-		//}
-	end;
- 
-	// A cada 3 minutos 180
-	//OnTimer3000:
-	// A cada 1 hora
-	OnTimer3600000:
-		
-		//if( .modo )
-			set #ponto, #ponto + 1;
-		//else
-		//	query_sql( "UPDATE `global_reg_value` SET `value`=`value`+1 WHERE `str`='#ponto' AND `char`.`char_id`=`char_id` AND `char`.`online`=1" );
-		if(#ponto==1)
+		if(@horas_online)
+			set @horas_online,0;
+		attachnpctimer;
+		initnpctimer;
+		end;
+
+	//A cada 1 hora
+	OnTimer600000:
+//	OnTimer3600000:
+		set @horas_online, @horas_online + 1;
+		if(@horas_online==1)
 			dispbottom "Você está a 1 hora logado";
 		else
-			dispbottom "Você está a "+#ponto+" horas logado";
+			dispbottom "Você está a "+@horas_online+" horas logado";
+		if(@tempoafk!=1){
+			set @tempo_on_rand,rand(1,4);
+			if(@tempo_on_rand==1)
+				dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de PRONTERA!";
+			if(@tempo_on_rand==2)
+				dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de MORROC!";
+			if(@tempo_on_rand==3)
+				dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de GEFFEN!";
+			if(@tempo_on_rand==4)
+				dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de PAYON!";
+		}
 		initnpctimer;
-	end;
- 
- 
-	// CONFIGURE AQUI EMBAIXO
-//	OnInit:
-		// Configure o modo de funcionamento do sistema
-		// Modo = 0 -> A cada 3 minutos, o servidor acrescenta um ponto para quem estiver online
-		// Modo = 1 -> O servidor acrescenta um ponto para o jogador a cada 3 minutos que ele passar online (quanto mais jogadores, mais pesado fica para o servidor executar neste modo!)
-		//set .modo, 1;
- 
-		// NÃO MEXA DAQUI EM DIANTE
- 
-		//if( !modo )
-		//	initnpctimer;
-//	end;
+		end;
+	
+	OnTempoPremio:
+		set @tempo_premio,@tempo_premio+1;
+		if(@tempo_premio>=300){
+			set @tempo_premio,0;
+			set @tempo_on_rand,0;
+			end;
+		}
+		addtimer 1000, strnpcinfo(3)+"::OnTempoPremio";
+		end;
+}
+
+prontera,182,215,5	script	Relojoeiro::RelojoeiroProntera	804,{
+	set .nome$,"[^FF0000Relojoeiro^000000]";//Nome do NPC
+	mes .nome$;
+	mes "Sou o relojoeiro de Prontera...";
+	if(@tempo_on_rand==1){
+		mes "Seu prêmio";
+		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+		set @tempo_on_rand,0;
+	}
+	close;
+}
+morocc,169,105,5	script	Relojoeiro::RelojoeiroMorroc	804,{
+	set .nome$,"[^FF0000Relojoeiro^000000]";//Nome do NPC
+	mes .nome$;
+	mes "Sou o relojoeiro de Morroc...";
+	if(@tempo_on_rand==2){
+		mes "Seu prêmio";
+		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+		set @tempo_on_rand,0;
+	}
+	close;
+}
+geffen,127,64,5	script	Relojoeiro::RelojoeiroGeffen	804,{
+	set .nome$,"[^FF0000Relojoeiro^000000]";//Nome do NPC
+	mes .nome$;
+	mes "Sou o relojoeiro de Geffen...";
+	if(@tempo_on_rand==3){
+		mes "Seu prêmio";
+		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+		set @tempo_on_rand,0;	
+	}
+	close;
+}
+payon,165,222,5	script	Relojoeiro::RelojoeiroPayon	804,{
+	set .nome$,"[^FF0000Relojoeiro^000000]";//Nome do NPC
+	mes .nome$;
+	mes "Sou o relojoeiro de Payon...";
+	if(@tempo_on_rand==4){
+		mes "Seu prêmio";
+		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+		set @tempo_on_rand,0;
+	}
+	close;
 }

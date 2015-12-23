@@ -1,30 +1,29 @@
-//Kickar player afk na arena
+//Verifica a cada 20min se o player não está afk
 -	script	IdleKick	-1,{
 	OnPCLoginEvent:
-		set .interval, 1; // How often to check? (seconds)
-		set .max_idle, 120; // Idle time before kicking? (seconds)
+		set .interval, 1; // Checar a cada quanto tempo? (segundos)
+		set .max_idle, 1200; //20min  Tempo máximo que pode ficar afk (segundos)
+		set @tempoafk,0;//controlar premio
+		set @idle_seconds,0;//tempo afk
 		getmapxy( @map$, @x, @y, 0 );
 		addtimer .interval *1000, strnpcinfo(3)+"::OnCheck";
 		end;
-
 	OnCheck:
 		getmapxy( .@map$, .@x, .@y, 0 );
-		if( .@map$ == "arena" && @duelando == 1 ) {
-			if (.@map$==@map$ && .@x==@x && .@y==@y) { // same map,x,y (idle)
-				set @idle_seconds, @idle_seconds + .interval;
-			} else { // they moved, so reset idle timer
-				set @idle_seconds, 0;
-			}
-			set @map$,.@map$; set @x,.@x; set @y,.@y;
-			if (@idle_seconds >= .max_idle) {
-//				dispbottom "Você ficou afk até o tempo limitaro. Movendo para fora da batalha...";
-//				warp "arena",33,50; // warp out
-				mapannounce "arena",""+strcharinfo(0)+" ficou AFK por mais de 2 minutos e foi deslogado!",bc_all,0xAAFF00;
-				atcommand "@kick "+strcharinfo(0); // or kick
-			}
+		if (.@map$==@map$ && .@x==@x && .@y==@y) {//verifica se são as mesmas cordenadas map,x,y (afk)
+			set @idle_seconds, @idle_seconds + .interval;
+		} else { // senao reseta o tempo pra 0
+			set @idle_seconds, 0;
 		}
-		addtimer .interval *1000, strnpcinfo(3)+"::OnCheck";
-		end;
+		set @map$,.@map$; set @x,.@x; set @y,.@y;//atualiza cordenada
+		if (@idle_seconds >= .max_idle) {//se atingir o limite
+			dispbottom "Você ficou mais de 20 minutos ausente.";
+			dispbottom "Tempo online interrompido, relogue novamente para ativar.";
+			set @tempoafk,1;
+//			atcommand "@kick "+strcharinfo(0);//kick
+		}
+	addtimer .interval *1000, strnpcinfo(3)+"::OnCheck";
+	end;
 }
 
 //Matar monstros invocados na arena

@@ -48,9 +48,9 @@ max_cloth_color: 553
 max_lv: 200
 
 display_version: no
-area_size: 24
+area_size: 35
 max_walk_path: 30
-area_size: 24
+aura_lv: 200
 
 //homunc.conf---------------------
 homunculus_S_max_level: 99//150
