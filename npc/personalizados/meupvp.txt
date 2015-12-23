@@ -186,7 +186,6 @@ arena,28,53,6	script	Organizadora de Duelos::AssistenteDuel	655,{
 	mes "Tarde demais!";
 	close;
 	OnDuelar:
-		announce "DUELAR",0;
 		if(($@duelando1!=0)&&($@duelando2!=0)) goto OnIniciarDuelo;
 		warpchar "arena",45,50,$@duelando1;
 		warpchar "arena",54,50,$@duelando2;
