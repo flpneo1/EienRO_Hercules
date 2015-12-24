@@ -259,21 +259,21 @@ arena,28,53,6	script	Organizadora de Duelos::AssistenteDuel	655,{
 		if($@acaboutempo==1)
 			mapannounce "arena","EMPATE! Os dois estão vivos, ninguém venceu o duelo.",bc_all,0xAAFF00;
 		if(($@matou1==0)&&($@morreu2!=0))
-			mapannounce "arena",$@duelando2$+" se matou!"+$@duelando1$+" venceu o duelo!",bc_all,0xAAFF00;
+			mapannounce "arena",$@duelando2$+" se matou! "+$@duelando1$+" venceu o duelo!",bc_all,0xAAFF00;
 		if(($@matou2==0)&&($@morreu1!=0))
-			mapannounce "arena",$@duelando1$+" se matou!"+$@duelando2$+" venceu o duelo!",bc_all,0xAAFF00;
+			mapannounce "arena",$@duelando1$+" se matou! "+$@duelando2$+" venceu o duelo!",bc_all,0xAAFF00;
 		if(($@matou1!=0)&&($@morreu1==0))
 			mapannounce "arena",$@duelando1$+" venceu o duelo!",bc_all,0xAAFF00;
 		if(($@matou2!=0)&&($@morreu2==0))
 			mapannounce "arena",$@duelando2$+" venceu o duelo!",bc_all,0xAAFF00;
 		if($@deslogou1!=0)
-			mapannounce "arena",$@duelando1$+" abandonou o duelo!"+$@duelando2$+" venceu!",bc_all,0xAAFF00;
+			mapannounce "arena",$@duelando1$+" abandonou o duelo! "+$@duelando2$+" venceu!",bc_all,0xAAFF00;
 		if($@deslogou2!=0)
-			mapannounce "arena",$@duelando2$+" abandonou o duelo!"+$@duelando1$+" venceu!",bc_all,0xAAFF00;
+			mapannounce "arena",$@duelando2$+" abandonou o duelo! "+$@duelando1$+" venceu!",bc_all,0xAAFF00;
 		if(($@duelando1_afk==1)&&($@duelando1!=0)&&($@duelando2!=0))
-			mapannounce "arena",$@duelando1$+" ficou ausente por mais de 2 minutos e perdeu o duelo!"+$@duelando2$+" venceu!",bc_all,0xAAFF00;
+			mapannounce "arena",$@duelando1$+" ficou ausente por mais de 2 minutos e perdeu o duelo! "+$@duelando2$+" venceu!",bc_all,0xAAFF00;
 		if(($@duelando2_afk==1)&&($@duelando1!=0)&&($@duelando2!=0))
-			mapannounce "arena",$@duelando2$+" ficou ausente por mais de 2 minutos e perdeu o duelo!"+$@duelando1$+" venceu!",bc_all,0xAAFF00;
+			mapannounce "arena",$@duelando2$+" ficou ausente por mais de 2 minutos e perdeu o duelo! "+$@duelando1$+" venceu!",bc_all,0xAAFF00;
 		sleep 2000;
 		goto OnFimDuel;
 		end;
