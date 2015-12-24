@@ -1,54 +1,84 @@
-C:\USERS\VM RAG\DOCUMENTS\GITHUB\EIENRO_HERCULES\VCPROJ-11\LOGIN-SERVER\DEBUG\VC110.PDB
-C:\USERS\VM RAG\DOCUMENTS\GITHUB\EIENRO_HERCULES\LOGIN-SERVER.ILK
-C:\USERS\VM RAG\DOCUMENTS\GITHUB\EIENRO_HERCULES\LOGIN-SERVER.EXE
-C:\USERS\VM RAG\DOCUMENTS\GITHUB\EIENRO_HERCULES\LOGIN-SERVER.PDB
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\login-server.lib
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\login-server.exp
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\account_sql.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\conf.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\console.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\core.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\db.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\ers.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\grammar.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\HPM.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\HPMlogin.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\ipban_sql.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\libconfig.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\login.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\loginlog_sql.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\malloc.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\md5calc.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\mt19937ar.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\mutex.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\nullpo.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\random.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\scanctx.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\scanner.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\showmsg.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\socket.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\sql.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\strbuf.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\strlib.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\sysinfo.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\thread.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\timer.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\utils.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\CL.3292.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\CL.3292.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\CL.680.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\CL.680.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\cl.command.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\CL.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\cl.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\link-cvtres.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\link-cvtres.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\link-rc.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\link-rc.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\link.command.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\link.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\link.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\login-server.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\vc110.idb
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\login-server\Debug\vc110.pdb
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\..\login-server.exe
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\LIBCONFIG.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\STRBUF.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\MUTEX.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\ACCOUNT_SQL.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\HPMLOGIN.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\LOGINLOG_SQL.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\CONSOLE.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\DB.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\HPM.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\SHOWMSG.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\SQL.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\TIMER.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\MT19937AR.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\GRAMMAR.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\SCANCTX.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\SCANNER.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\THREAD.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\IPBAN_SQL.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\LOGIN.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\CONF.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\CORE.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\ERS.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\MALLOC.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\MD5CALC.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\NULLPO.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\RANDOM.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\SOCKET.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\STRLIB.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\SYSINFO.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\UTILS.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\LOGIN-SERVER\DEBUG\VC110.PDB
+C:\HERCULESWS\HERCULESSERVER\LOGIN-SERVER.ILK
+C:\HERCULESWS\HERCULESSERVER\LOGIN-SERVER.EXE
+C:\HERCULESWS\HERCULESSERVER\LOGIN-SERVER.PDB
+C:\HerculesWS\HerculesServer\login-server.lib
+C:\HerculesWS\HerculesServer\login-server.exp
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\account_sql.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\conf.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\console.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\core.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\db.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\ers.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\grammar.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\HPM.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\HPMlogin.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\ipban_sql.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\libconfig.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\login.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\loginlog_sql.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\malloc.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\md5calc.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\mt19937ar.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\mutex.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\nullpo.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\random.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\scanctx.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\scanner.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\showmsg.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\socket.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\sql.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\strbuf.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\strlib.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\sysinfo.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\thread.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\timer.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\utils.obj
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\CL.6172.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\CL.6172.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\CL.7824.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\CL.7824.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\cl.command.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\CL.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\CL.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\link-cvtres.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\link-cvtres.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\link-rc.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\link-rc.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\link.command.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\link.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\link.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\login-server.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\vc110.idb
+C:\HerculesWS\HerculesServer\vcproj-11\login-server\Debug\vc110.pdb
+C:\HerculesWS\HerculesServer\vcproj-11\..\login-server.exe

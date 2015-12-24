@@ -1,5 +1,5 @@
-﻿Build started 24/12/2015 13:41:40.
-     1>Project "C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\map-server.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 22/02/2015 00:40:54.
+     1>Project "C:\HerculesWS\HerculesServer\vcproj-11\map-server.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\3rdparty\mysql\include /I..\3rdparty\zlib\include /I..\3rdparty\pcre\include /I..\3rdparty\msinttypes\include /I..\3rdparty\mt19937ar /I..\3rdparty\libconfig /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _WIN32 /D __WIN32 /D _DEBUG /D PCRE_SUPPORT /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D FD_SETSIZE=4096 /D LIBCONFIG_STATIC /D YY_USE_CONST /D _MBCS /Gm- /RTC1 /MTd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"map-server\Debug\\" /Fd"map-server\Debug\vc110.pdb" /Gd /TC /wd4018 /wd4100 /wd4800 /analyze- /errorReport:prompt ..\3rdparty\libconfig\grammar.c ..\3rdparty\libconfig\libconfig.c ..\3rdparty\libconfig\scanctx.c ..\3rdparty\libconfig\scanner.c ..\3rdparty\libconfig\strbuf.c ..\3rdparty\mt19937ar\mt19937ar.c ..\src\common\conf.c ..\src\common\core.c ..\src\common\console.c ..\src\common\db.c ..\src\common\des.c ..\src\common\ers.c ..\src\common\grfio.c ..\src\common\HPM.c ..\src\common\malloc.c ..\src\common\mapindex.c ..\src\common\md5calc.c ..\src\common\mutex.c ..\src\common\nullpo.c ..\src\common\random.c ..\src\common\showmsg.c ..\src\common\socket.c ..\src\common\sql.c ..\src\common\strlib.c ..\src\common\sysinfo.c ..\src\common\thread.c ..\src\common\timer.c ..\src\common\utils.c ..\src\map\atcommand.c ..\src\map\battle.c ..\src\map\battleground.c ..\src\map\buyingstore.c ..\src\map\channel.c ..\src\map\chat.c ..\src\map\chrif.c ..\src\map\clif.c ..\src\map\date.c ..\src\map\duel.c ..\src\map\elemental.c ..\src\map\guild.c ..\src\map\intif.c "..\src\map\irc-bot.c" ..\src\map\itemdb.c ..\src\map\log.c ..\src\map\mail.c ..\src\map\map.c ..\src\map\mapreg_sql.c ..\src\map\homunculus.c ..\src\map\HPMmap.c ..\src\map\instance.c ..\src\map\mercenary.c ..\src\map\mob.c ..\src\map\npc.c ..\src\map\npc_chat.c ..\src\map\party.c ..\src\map\path.c ..\src\map\pc.c ..\src\map\pc_groups.c ..\src\map\pet.c ..\src\map\quest.c ..\src\map\script.c ..\src\map\searchstore.c ..\src\map\skill.c ..\src\map\status.c ..\src\map\storage.c ..\src\map\trade.c ..\src\map\unit.c ..\src\map\vending.c
          grammar.c
@@ -140,9 +140,9 @@
          "map-server\Debug\unit.obj"
          "map-server\Debug\vending.obj"
             Creating library ..\map-server.lib and object ..\map-server.exp
-         map-server.vcxproj -> C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\..\map-server.exe
-     1>Done Building Project "C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\map-server.vcxproj" (Rebuild target(s)).
+         map-server.vcxproj -> C:\HerculesWS\HerculesServer\vcproj-11\..\map-server.exe
+     1>Done Building Project "C:\HerculesWS\HerculesServer\vcproj-11\map-server.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:16.97
+Time Elapsed 00:00:24.29

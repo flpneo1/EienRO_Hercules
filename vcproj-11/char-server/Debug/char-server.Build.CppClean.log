@@ -1,66 +1,108 @@
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\char-server.lib
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\char-server.exp
-C:\USERS\VM RAG\DOCUMENTS\GITHUB\EIENRO_HERCULES\VCPROJ-11\CHAR-SERVER\DEBUG\VC110.PDB
-C:\USERS\VM RAG\DOCUMENTS\GITHUB\EIENRO_HERCULES\CHAR-SERVER.ILK
-C:\USERS\VM RAG\DOCUMENTS\GITHUB\EIENRO_HERCULES\CHAR-SERVER.EXE
-C:\USERS\VM RAG\DOCUMENTS\GITHUB\EIENRO_HERCULES\CHAR-SERVER.PDB
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\char.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\conf.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\console.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\core.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\db.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\ers.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\geoip.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\grammar.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\HPM.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\HPMchar.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\inter.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_auction.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_elemental.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_guild.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_homun.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_mail.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_mercenary.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_party.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_pet.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_quest.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\int_storage.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\libconfig.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\loginif.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\malloc.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\mapif.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\mapindex.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\mt19937ar.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\mutex.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\nullpo.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\pincode.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\random.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\scanctx.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\scanner.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\showmsg.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\socket.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\sql.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\strbuf.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\strlib.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\sysinfo.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\thread.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\timer.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\utils.obj
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\char-server.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\CL.4064.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\CL.4064.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\CL.548.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\CL.548.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\cl.command.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\CL.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\cl.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\link-cvtres.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\link-cvtres.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\link-rc.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\link-rc.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\link.command.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\link.read.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\link.write.1.tlog
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\vc110.idb
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\char-server\Debug\vc110.pdb
-C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\..\char-server.exe
+C:\HerculesWS\HerculesServer\char-server.lib
+C:\HerculesWS\HerculesServer\char-server.exp
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\LIBCONFIG.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\SCANCTX.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\STRBUF.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\MT19937AR.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\CONF.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\CONSOLE.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\ERS.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\HPM.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\NULLPO.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\RANDOM.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\SOCKET.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\STRLIB.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\SYSINFO.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\TIMER.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\HPMCHAR.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\GEOIP.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_AUCTION.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_GUILD.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_MAIL.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_PARTY.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_QUEST.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_STORAGE.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\LOGINIF.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\PINCODE.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\GRAMMAR.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\SCANNER.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\CORE.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\DB.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\MALLOC.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\MAPINDEX.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\MUTEX.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\SHOWMSG.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\SQL.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\THREAD.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\UTILS.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\CHAR.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_ELEMENTAL.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_HOMUN.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_MERCENARY.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INT_PET.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\INTER.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\MAPIF.OBJ
+C:\HERCULESWS\HERCULESSERVER\VCPROJ-11\CHAR-SERVER\DEBUG\VC110.PDB
+C:\HERCULESWS\HERCULESSERVER\CHAR-SERVER.ILK
+C:\HERCULESWS\HERCULESSERVER\CHAR-SERVER.EXE
+C:\HERCULESWS\HERCULESSERVER\CHAR-SERVER.PDB
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\char.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\conf.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\console.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\core.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\db.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\ers.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\geoip.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\grammar.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\HPM.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\HPMchar.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\inter.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_auction.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_elemental.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_guild.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_homun.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_mail.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_mercenary.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_party.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_pet.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_quest.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\int_storage.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\libconfig.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\loginif.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\malloc.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\mapif.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\mapindex.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\mt19937ar.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\mutex.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\nullpo.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\pincode.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\random.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\scanctx.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\scanner.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\showmsg.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\socket.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\sql.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\strbuf.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\strlib.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\sysinfo.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\thread.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\timer.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\utils.obj
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\char-server.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\CL.7308.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\CL.7308.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\CL.7860.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\CL.7860.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\cl.command.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\CL.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\CL.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\link-cvtres.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\link-cvtres.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\link-rc.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\link-rc.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\link.command.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\link.read.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\link.write.1.tlog
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\vc110.idb
+C:\HerculesWS\HerculesServer\vcproj-11\char-server\Debug\vc110.pdb
+C:\HerculesWS\HerculesServer\vcproj-11\..\char-server.exe

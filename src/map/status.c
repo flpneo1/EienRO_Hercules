@@ -914,7 +914,6 @@ void initChangeTables(void) {
 	status->IconChangeTable[SC_SUPER_STAR] = SI_SUPER_STAR;
 	status->IconChangeTable[SC_STRANGELIGHTS] = SI_STRANGELIGHTS;
 	status->IconChangeTable[SC_DECORATION_OF_MUSIC] = SI_DECORATION_OF_MUSIC;
-	status->IconChangeTable[SC_MYCUSTOMBUTTON] = SI_MYCUSTOMBUTTON;
 
 	//Other SC which are not necessarily associated to skills.
 	status->ChangeFlagTable[SC_ATTHASTE_POTION1] = SCB_ASPD;
