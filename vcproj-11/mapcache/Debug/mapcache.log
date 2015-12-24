@@ -1,5 +1,5 @@
-﻿Build started 22/02/2015 00:41:16.
-     1>Project "C:\HerculesWS\HerculesServer\vcproj-11\mapcache.vcxproj" on node 3 (Rebuild target(s)).
+﻿Build started 24/12/2015 13:41:43.
+     1>Project "C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\mapcache.vcxproj" on node 3 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\3rdparty\libconfig /I..\3rdparty\zlib\include /I..\3rdparty\msinttypes\include /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _WIN32 /D __WIN32 /D _DEBUG /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D MINICORE /D LIBCONFIG_STATIC /D YY_USE_CONST /D _MBCS /Gm- /RTC1 /MTd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"mapcache\Debug\\" /Fd"mapcache\Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt ..\src\common\core.c ..\src\common\console.c ..\src\common\des.c ..\src\common\grfio.c ..\src\common\malloc.c ..\src\common\showmsg.c ..\src\common\strlib.c ..\src\common\sysinfo.c ..\src\common\utils.c ..\src\common\nullpo.c ..\src\tool\mapcache.c
          core.c
@@ -25,9 +25,9 @@
          mapcache\Debug\utils.obj
          mapcache\Debug\nullpo.obj
          mapcache\Debug\mapcache.obj
-         mapcache.vcxproj -> C:\HerculesWS\HerculesServer\vcproj-11\..\mapcache.exe
-     1>Done Building Project "C:\HerculesWS\HerculesServer\vcproj-11\mapcache.vcxproj" (Rebuild target(s)).
+         mapcache.vcxproj -> C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\..\mapcache.exe
+     1>Done Building Project "C:\Users\VM Rag\Documents\GitHub\EienRO_Hercules\vcproj-11\mapcache.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.98
+Time Elapsed 00:00:02.37
