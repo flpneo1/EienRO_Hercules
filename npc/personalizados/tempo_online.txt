@@ -2,46 +2,52 @@
 //== Neo
 //=============================================
 -	script	TempoOnline	-1,{
-end;
 
 	OnPCLoginEvent:
-		if(@horas_online)
-			set @horas_online,0;
-		attachnpctimer;
-		initnpctimer;
+		set .interval, 1; // Checar a cada quanto tempo? (segundos)
+		set .max_idle, 1200; //20min  Tempo máximo que pode ficar afk (segundos)
+		set @tempo_on_rand,0;
+		getmapxy( @map$, @x, @y, 0 );
+		addtimer .interval *1000, strnpcinfo(3)+"::OnCheck";
 		end;
 
-	//A cada 1 hora
-//	OnTimer360000:
-	OnTimer3600000:
-		set @horas_online, @horas_online + 1;
-		if(@horas_online==1)
-			dispbottom "Você está a 1 hora logado";
-		else
-			dispbottom "Você está a "+@horas_online+" horas logado";
-		if(@tempoafk!=1){
-			set @tempo_on_rand,rand(1,4);
-			if(@tempo_on_rand==1)
-				dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de PRONTERA!";
-			if(@tempo_on_rand==2)
-				dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de MORROC!";
-			if(@tempo_on_rand==3)
-				dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de GEFFEN!";
-			if(@tempo_on_rand==4)
-				dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de PAYON!";
-		}
-		initnpctimer;
-		end;
-	
-	OnTempoPremio:
-		set @tempo_premio,@tempo_premio+1;
-		if(@tempo_premio>=300){
-			set @tempo_premio,0;
-			set @tempo_on_rand,0;
-			dispbottom "O tempo para pegar seu prêmio acabou.";
+	OnCheck:
+		if((gettime(4)==6)&&(gettime(3)==19)){//se for horario de woe não funciona contagem (sabado as 19h)
 			end;
+		} else {
+			set tempo_online,tempo_online+.interval;
+			getmapxy( .@map$, .@x, .@y, 0 );
+			if(.@map$==@map$ && .@x==@x && .@y==@y) {//verifica se são as mesmas cordenadas map,x,y (afk)
+				set tempoafk,tempoafk+.interval;
+			} else { // senao reseta o tempo pra 0
+				set tempoafk,0;
+			}
+			set @map$,.@map$; set @x,.@x; set @y,.@y;//atualiza cordenada
+			if(tempoafk>=.max_idle){//se atingir o limite
+				dispbottom "Você ficou mais de 20 minutos ausente.";
+				dispbottom "Tempo online interrompido, relogue novamente para ativar.";
+				set tempo_online,0;
+				end;
+			}
+			if(tempo_online>=3600){
+				set tempo_online,0;
+				set @tempo_on_rand,rand(1,4);
+				if(@tempo_on_rand==1)
+					dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de PRONTERA!";
+				if(@tempo_on_rand==2)
+					dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de MORROC!";
+				if(@tempo_on_rand==3)
+					dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de GEFFEN!";
+				if(@tempo_on_rand==4)
+					dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de PAYON!";
+				sleep2 300000;
+				if(@tempo_on_rand==0){;}else{
+					dispbottom "O tempo para pegar seu prêmio acabobu";
+					set @tempo_on_rand,0;
+				}
+			}
+			addtimer .interval *1000, strnpcinfo(3)+"::OnCheck";
 		}
-		addtimer 1000, strnpcinfo(3)+"::OnTempoPremio";
 		end;
 }
 
@@ -50,10 +56,7 @@ prontera,182,215,5	script	Relojoeiro::RelojoeiroProntera	804,{
 	mes .nome$;
 	mes "Sou o relojoeiro de Prontera...";
 	if(@tempo_on_rand==1){
-		mes "Já sei porque veio falar cocmigo...";
-		mes "Pegue seu prêmio.";
 		callfunc "pegapremio";
-		set @tempo_on_rand,0;
 	}
 	close;
 }
@@ -62,10 +65,7 @@ morocc,169,105,5	script	Relojoeiro::RelojoeiroMorroc	804,{
 	mes .nome$;
 	mes "Sou o relojoeiro de Morroc...";
 	if(@tempo_on_rand==2){
-		mes "Já sei porque veio falar cocmigo...";
-		mes "Pegue seu prêmio.";
 		callfunc "pegapremio";
-		set @tempo_on_rand,0;
 	}
 	close;
 }
@@ -74,10 +74,7 @@ geffen,127,64,5	script	Relojoeiro::RelojoeiroGeffen	804,{
 	mes .nome$;
 	mes "Sou o relojoeiro de Geffen...";
 	if(@tempo_on_rand==3){
-		mes "Já sei porque veio falar cocmigo...";
-		mes "Pegue seu prêmio.";
 		callfunc "pegapremio";
-		set @tempo_on_rand,0;	
 	}
 	close;
 }
@@ -86,10 +83,7 @@ payon,165,222,5	script	Relojoeiro::RelojoeiroPayon	804,{
 	mes .nome$;
 	mes "Sou o relojoeiro de Payon...";
 	if(@tempo_on_rand==4){
-		mes "Já sei porque veio falar cocmigo...";
-		mes "Pegue seu prêmio.";
 		callfunc "pegapremio";
-		set @tempo_on_rand,0;
 	}
 	close;
 }

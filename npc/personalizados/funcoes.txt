@@ -1,6 +1,20 @@
 //Funções Tempo Online===================================================
 function	script	pegapremio	{
-	getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+	next;
+	mes "Calma! Tudo tem seu tempo...";
+	mes "Já sei porque veio falar comigo.";
+	mes "Apenas confirme o número.";
+	next;
+	set @num_premio_on_rand,rand(100,999);
+	mes "+@num_premio_on_rand+";
+	input @num_premio_on_rand_digitado;
+	if(@num_premio_on_rand==@num_premio_on_rand_digitado){
+		mes "Pegue seu prêmio.";
+		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
+		set @tempo_on_rand,0;
+	} else {
+		mes "Número errado!";
+	}
 	return;
 }
 
