@@ -1,21 +1,24 @@
 //Funções Tempo Online===================================================
 function	script	pegapremio	{
 	next;
+	mes "[^0000FFRelojoeiro^000000]";
 	mes "Calma! Tudo tem seu tempo...";
 	mes "Já sei porque veio falar comigo.";
 	mes "Apenas confirme o número.";
 	next;
-	set @num_premio_on_rand,rand(100,999);
-	mes "+@num_premio_on_rand+";
+	set @num_premio_on_rand,rand(1000,9999);
+	mes "[^0000FFRelojoeiro^000000]";
+	mes "[^FF0000"+@num_premio_on_rand+"^000000]";
 	input @num_premio_on_rand_digitado;
 	if(@num_premio_on_rand==@num_premio_on_rand_digitado){
 		mes "Pegue seu prêmio.";
 		getitem 29000,1;//premio por ficar 1hora sem ficar AFK
 		set @tempo_on_rand,0;
+		awake "TempoOnline";
 	} else {
 		mes "Número errado!";
 	}
-	return;
+	return 1;
 }
 
 //Funções da Arena=======================================================
@@ -34,7 +37,6 @@ function	script	addProximo	{
 	}
 	return 0;
 }
-
 function	script	delProximo	{
 	if(getarg(0)==$@proximo1){
 		set $@proximo1,0;
@@ -48,7 +50,6 @@ function	script	delProximo	{
 	}
 	return 0;
 }
-
 function	script	addDuelando	{
 	if($@duelando1==0){
 		set $@duelando1,getarg(0);
@@ -62,7 +63,6 @@ function	script	addDuelando	{
 	}
 	return 0;
 }
-
 function	script	Trava	{
 	setcell "arena",44,51,46,51,cell_walkable,0;//risco cima//------------------lado 1
 	setcell "arena",44,51,44,49,cell_walkable,0;//risco esquerda
@@ -84,7 +84,6 @@ function	script	Trava	{
 	return 1;
 	end;
 }
-
 function	script	Destrava	{
 	setcell "arena",44,51,46,51,cell_walkable,1;//risco cima//------------------lado 1
 	setcell "arena",44,51,44,49,cell_walkable,1;//risco esquerda

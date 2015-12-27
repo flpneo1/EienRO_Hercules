@@ -27,6 +27,7 @@
 				dispbottom "Você ficou mais de 20 minutos ausente.";
 				dispbottom "Tempo online interrompido, relogue novamente para ativar.";
 				set tempo_online,0;
+				set tempoafk,0;
 				end;
 			}
 			if(tempo_online>=3600){
@@ -42,7 +43,7 @@
 					dispbottom "Você tem 5 minutos para pegar seu premio com o relojoeiro de PAYON!";
 				sleep2 300000;
 				if(@tempo_on_rand==0){;}else{
-					dispbottom "O tempo para pegar seu prêmio acabobu";
+					dispbottom "O tempo para pegar seu prêmio acabou";
 					set @tempo_on_rand,0;
 				}
 			}
@@ -52,7 +53,7 @@
 }
 
 prontera,182,215,5	script	Relojoeiro::RelojoeiroProntera	804,{
-	set .nome$,"[^FF0000Relojoeiro^000000]";//Nome do NPC
+	set .nome$,"[^0000FFRelojoeiro^000000]";//Nome do NPC
 	mes .nome$;
 	mes "Sou o relojoeiro de Prontera...";
 	if(@tempo_on_rand==1){
@@ -61,7 +62,7 @@ prontera,182,215,5	script	Relojoeiro::RelojoeiroProntera	804,{
 	close;
 }
 morocc,169,105,5	script	Relojoeiro::RelojoeiroMorroc	804,{
-	set .nome$,"[^FF0000Relojoeiro^000000]";//Nome do NPC
+	set .nome$,"[^0000FFRelojoeiro^000000]";//Nome do NPC
 	mes .nome$;
 	mes "Sou o relojoeiro de Morroc...";
 	if(@tempo_on_rand==2){
@@ -70,7 +71,7 @@ morocc,169,105,5	script	Relojoeiro::RelojoeiroMorroc	804,{
 	close;
 }
 geffen,127,64,5	script	Relojoeiro::RelojoeiroGeffen	804,{
-	set .nome$,"[^FF0000Relojoeiro^000000]";//Nome do NPC
+	set .nome$,"[^0000FFRelojoeiro^000000]";//Nome do NPC
 	mes .nome$;
 	mes "Sou o relojoeiro de Geffen...";
 	if(@tempo_on_rand==3){
@@ -79,7 +80,7 @@ geffen,127,64,5	script	Relojoeiro::RelojoeiroGeffen	804,{
 	close;
 }
 payon,165,222,5	script	Relojoeiro::RelojoeiroPayon	804,{
-	set .nome$,"[^FF0000Relojoeiro^000000]";//Nome do NPC
+	set .nome$,"[^0000FFRelojoeiro^000000]";//Nome do NPC
 	mes .nome$;
 	mes "Sou o relojoeiro de Payon...";
 	if(@tempo_on_rand==4){
