@@ -51,6 +51,7 @@ function Job_Menu; function A_An;
 			mes "Tudo pronto!";
 			set resetallskill,2;
 			atcommand "@allskill";
+			if (.Platinum) callsub Get_Platinum;
 			atcommand "@effect "+8;
 			next;
 		nao:
