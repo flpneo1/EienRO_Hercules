@@ -162,3 +162,5 @@
 //5470:5653,{ bonus bDex,1; bonus bLongAtkRate,3; }
 13034:13035,{ bonus bMaxSP,20; bonus bMaxHPrate,5; bonus bHit,10; bonus2 bAddSize,Size_Large,30; autobonus "{ bonus bAspdRate,100; }",1,7000,0,"{ specialeffect2 EF_POTION_BERSERK; }"; }
 18507:18539,{ bonus bUseSPrate,-3; }
+//========================================MEUS COMBOS=======================================
+1340:25000,{ bonus3 bAutoSpellWhenHit,"HP_ASSUMPTIO",2,5; bonus bFlee,100; }

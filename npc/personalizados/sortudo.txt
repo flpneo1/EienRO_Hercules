@@ -1,173 +1,336 @@
+//|==============================================================================================|\\
+//|         *****************************  Evento Sortudo  *****************************         |\\
+//|==============================================================================================|\\
 prontera,165,205,6	script	Sortudo	869,{
-	set @npc$,"[^ff0000Sortudo^000000]";
-	set @lvlgm,99;
-	mes @npc$;
-	mes "Bem vind"+(Sex?"o":"a")+" ao evento sortudo.";
-//	if(Sex==2) mes "Mulher";
-//	mes ""+strsex("o","a")+"";
-	mes "Horário de abertura a cada 1 hora.";
-	mes "Iniciando em 10:00, 11:00, 12:00...";
+//================================ ENTRAR NO EVENTO ================================
+	set .minutos_abrir,60-gettime(2);//Seta variável com minutos que falta para abrir o evento
+	mes .npc$;
+	mes "Bem vind"+(Sex?"o":"a")+" ao evento ^FF9A00"+.nome_evento$+"^000000!";
+	if(.eventoaberto!=1){
+		mes "^FF0000Evento fechado^000000";
+		mes "Abrirá em: ^FF0000"+.minutos_abrir+"^000000 minutos.";
+	} else {
+		mes "^00AA00Evento aberto!^000000";
+	}
 	mes "O que deseja fazer?";
-	if(getgmlevel() >= @lvlgm) set .@m$,"Manipular evento";
-	switch(select("Entrar no evento","Informações",.@m$,"Sair"))
+	if(getgmlevel()>=.lvlgm)
+		mes "Pode usar o comando ^00AA00@"+.nome_evento$+"^000000 para manipular o evento";
+	if(getgmlevel()==99)//Somente o ADM tem essa opção
+		set .@m$,"Manipular Evento";
+	next;
+	switch(select("Entrar no evento","Informações",.@m$))
 	{
-		next;
-		mes @npc$;
+		mes .npc$;
 		case 1:
-			if(!$eventosortudo)
+			if(.eventoaberto!=1)
 			{
 				mes "O evento está fechado.";
 				close;
 			}
-			mes "Boa sorte!";
-			set @evento, rand(1,4);
-			if(@evento == 1){ warp "quiz_02",49,52; }
-			if(@evento == 2){ warp "quiz_02",37,52; }
-			if(@evento == 3){ warp "quiz_02",73,52; }
-			if(@evento == 4){ warp "quiz_02",61,52; }
-			end;
+			if((getcharid(1)==0)||(getgmlevel()>1)){
+				mes "Boa sorte!";
+				goto OnEntrarEvento;
+			}
+			mes "Precisa sair do seu grupo.";
+			close;
 		case 2:
-			mes "Esse é um evento aonde exige muita sorte e astúcia.";
+			mes "Esse é um evento com PvP onde exige muita sorte e astúcia.";
+			mes "Nós abrimos todos os dias a cada 1h, começando em 00h.";
+			mes "Para entrar precisa sair de seu grupo.";
 			next;
-			mes @npc$;
-			mes "Nós abrimos todos os dias a cada 1h, começando da 00h.";
+			mes .npc$;
+			mes "Quando entrar, será movido aleatoriamente para uma das 4 áreas.";
+			mes "Poderá encontrar outros jogadores no mesmo cercado que está, bem como poderá ficar sozinho.";
 			next;
-			mes @npc$;
-			mes "Após o início do evento, você precisará sobreviver à 5 minutos de PvP.";
+			mes .npc$;
+			mes "Após o início do evento, precisará sobreviver à 5 minutos de PvP dentro do seu cercado.";
+			mes "Depois desse tempo, irá surgir um baú em cada área para ir para a segunda fase.";
 			next;
-			mes @npc$;
-			mes "Caso você consiga sobreviver, irá precisar de sorte para receber um bom prêmio!";
+			mes .npc$;
+			mes "Na segunda fase participa no máximo 4 sobreviventes, repetindo a mesma lógica da primeira fase.";
+			mes "Após mais 5 minutos novamente, irá surgir um baú que irá conter o prêmio do vencedor.";
 			next;
-			mes @npc$;
+			mes .npc$;
+			mes "Se a quantidade de participantes no inicio do evento for menor que 5 pessoas, então vai direto para a segunda fase.";
+			mes "Boa Sorte! :)";
+			next;
+			mes .npc$;
 			mes "Os prêmios que você pode receber aleatoriamente são:";
-			for(set @i, 0; @i < getarraysize($id_prize); set @i, @i + 1)
-				mes "^777777"+$quantity_prize[@i]+"x "+getitemname($id_prize[@i])+"^000000";
-			mes "Prêmio em Zeny: ^777777"+$quantity_zeny+"z^000000";
+			for(set @i,0; @i<getarraysize($id_premio_sortudo); set @i,@i+1)
+				mes "^777777"+$quantidade_premio_sortudo[@i]+" "+getitemname($id_premio_sortudo[@i])+"^000000";
+			mes "Prêmio em Zeny: ^777777"+$zeny_evento_sortudo+"z^000000";
 			close;
 		case 3:
-			mes "O que deseja fazer?";
-			switch(select("Iniciar o evento:Alterar prêmios"))
-			{
-				next;  
-				mes @npc$;
-				case 1:
-					if(!$eventosortudo)
-					{
-						mes "Evento iniciado com sucesso.";
-						close2;
-						callsub evento_start;
-						end;
-					}
-					mes "O evento já foi iniciado.";
-					close;
-				case 2:                        
-					mes "Você deseja mudar as prêmiações?";
-					if(select("Não:Sim") == 1 )
-						close;
-					next;
-					mes @npc$;
-					mes "Digite o ID do 1º item que poderá ser dropado."; input @id_one;
-					next;
-					mes @npc$;
-					mes "Digite a quantidade do 1º item que poderá ser dropado."; input @quantity_one;
-					next;
-					mes @npc$;
-					mes "Digite o ID do 2º item que poderá ser dropado."; input @id_two;
-					next;
-					mes @npc$;
-					mes "Digite a quantidade do 2º item que poderá ser dropado."; input @quantity_two;
-					next;
-					mes @npc$;
-					mes "Digite o ID do 3º item que poderá ser dropado."; input @id_three;
-					next;
-					mes @npc$;
-					mes "Digite a quantidade do 3º item que poderá ser dropado."; input @quantity_three;
-					next;
-					mes @npc$;
-					mes "Digite a quantidade de Zeny que poderá ser dropado caso o jogador não receba um item."; input @quantity_zeny;
-					next;
-					mes @npc$;
-					mes "1º prêmio: ^777777"+@quantity_one+" - "+getitemname(@id_one)+"^000000";
-					mes "2º prêmio: ^777777"+@quantity_two+" - "+getitemname(@id_two)+"^000000";
-					mes "3º prêmio: ^777777"+@quantity_three+" - "+getitemname(@id_three)+"^000000";
-					mes "Prêmio em Zeny: ^777777"+@quantity_zeny+"z^000000";
-					next;
-					if(select("Confirmar:Cancelar") == 2 )
-						close;
-					next;
-					mes @npc$;
-					mes "Prêmiações editadas com sucesso.";
-					close2;
-					setarray $id_prize[0],@id_one,@id_two,@id_three;
-					setarray $quantity_prize[0],@quantity_one,@quantity_two,@quantity_three;
-					set $quantity_zeny,@quantity_zeny;
-					end;
+			getnameditem(607,strcharinfo(0));//TESTE
+			mes "Olá ADM!";
+			mes "Quer alterar os prêmios?";
+			for(set @i,0; @i<getarraysize($id_premio_sortudo); set @i,@i+1)
+				mes "^777777"+$quantidade_premio_sortudo[@i]+" "+getitemname($id_premio_sortudo[@i])+"^000000";
+			mes "Prêmio em Zeny: ^777777"+$zeny_evento_sortudo+"z^000000";
+			if(select("Sim","Não")==2) close;
+			next;
+			for(set @i,0; @i<=getarraysize($id_premio_sortudo); set @i,@i+1)//limpar arrays
+				set $id_premio_sortudo[@i],0;
+			for(set @i,0; @i<=getarraysize($id_premio_sortudo); set @i,@i+1)//limpar arrays
+				set $quantidade_premio_sortudo[@i],0;
+			mes .npc$;
+			mes "Digite a quantidade de prêmios.";
+			input $quantidade_premios_sortudo;
+			for(set @i,0; @i<$quantidade_premios_sortudo; set @i,@i+1){
+				set @ii,@i+1;
+				next;
+				mes .npc$;
+				mes "Digite o ID do prêmio "+@ii;
+				input $id_premio_sortudo[@i];
+				mes "Digite a quantidade desse prêmio "+@ii;
+				input $quantidade_premio_sortudo[@i];
 			}
-		case 4:
-			mes "Até mais!";
+			next;
+			mes .npc$;
+			mes "Agora a quantidade em Zenys.";
+			input $zeny_evento_sortudo;
+			next;
+			mes .npc$;
+			mes "Ficou assim:";
+			for(set @i,0; @i<getarraysize($id_premio_sortudo); set @i,@i+1)
+				mes "^777777"+$quantidade_premio_sortudo[@i]+" "+getitemname($id_premio_sortudo[@i])+"^000000";
+			mes "Prêmio em Zeny: ^777777"+$zeny_evento_sortudo+"z^000000";
 			close;
 	}
-
+	OnEntrarEvento:
+		while(getareausers(.mapa$,33,73,77,52)<.capacidade_maxima){
+			switch(rand(4)){
+				case 0:
+					if(getareausers(.mapa$,33,73,41,52)<.capacidade_cercado){//Area do primeiro cercado
+						warp .mapa$,49,52;
+						end;
+					}
+				case 1:
+					if(getareausers(.mapa$,45,73,53,52)<.capacidade_cercado){//Area do segundo cercado
+						warp .mapa$,37,52;
+						end;
+					}
+				case 2:
+					if(getareausers(.mapa$,57,73,65,52)<.capacidade_cercado){//Area do terceiro cercado
+						warp .mapa$,73,52;
+						end;
+					}
+				case 3:
+					if(getareausers(.mapa$,69,73,77,52)<.capacidade_cercado){//Area do quarto cercado
+						warp .mapa$,61,52;
+						end;
+					}
+			}
+		}
+		mes "Sinto muito, mas já está lotado, aguarde a próxima vez.";
+		close;
+//================================ AQUI COMEÇA O EVENTO ================================
 	OnMinute00:
-		goto evento_start;
-
-	evento_start:
-		set $eventosortudo,1;
-		killmonsterall "quiz_02";
-		announce "O Evento [Sortudo] está aberto, você tem 2 minutos para entrar!",bc_all,0x00FFFF;
-		sleep 60000;
-		announce "O Evento [Sortudo] vai iniciar em 1 minuto!",bc_all,0x00FFFF;
-		sleep 60000;
-		announce "O Evento [Sortudo] fechou!",bc_all,0x00FFFF;
-		set $eventosortudo,0;
-		mapannounce "quiz_02","Está valendo!",bc_all,0xAAFF00;
-		pvpon "quiz_02";
-		removemapflag "quiz_02",mf_noskill;
-		sleep 3000;
-		mapannounce "quiz_02","Em 5 minutos os baús irão aparecer...",bc_all,0xAAFF00;
-		sleep 300000;
-		pvpoff "quiz_02";
-		setmapflag "quiz_02",mf_noskill;
-		sleep 3000;
-		mapannounce "quiz_02","Os baús apareceram!",bc_all,0xAAFF00;
-		monster "quiz_02",34,69, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnPrize";
-		monster "quiz_02",51,69, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnPrize";
-		monster "quiz_02",58,69, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnPrize";
-		monster "quiz_02",75,69, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnPrize";
-//		monster "quiz_02",316,51, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnPrize";
-//		monster "quiz_02",333,51, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnPrize";
-//		monster "quiz_02",340,51, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnPrize";
-//		monster "quiz_02",357,51, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnPrize";
+		if((.eventoaberto==1)||(.eventoiniciado==1)){//Verificar se já foi aberto ou iniciado
+			end;
+		} else {
+			goto OnAbrirEvento;
+		}
 		end;
 
-	OnPrize:
-		set @rand_prize, rand(1,4);
-		if(@rand_prize == 1)
-		{
-			getitem $id_prize[0],$quantity_prize[0];
-			announce "[ "+strcharinfo(0)+" ] abriu um Baú da Sorte e recebeu: "+$quantity_prize[0]+" "+getitemname($id_prize[0])+"",bc_all,0xFF70FF;
+	OnAbrirEvento:
+		set .eventoaberto,1;//Abre evento, setando variável permitindo entrar no evento
+		set .eventoiniciado,0;//Sempre que abrir o evento, setar iniciado para 0 pra evitar de iniciar mais de 1 vez
+		removemapflag .mapa$,mf_pvp;
+		mapwarp .mapa$,"prontera",156,182;
+		killmonsterall .mapa$;
+		awake strnpcinfo(3);//se possuir algum sleep em andamento, acordar logo
+		initnpctimer;
+		stopnpctimer;
+		detachnpctimer;//só pra ter certeza de zerar o tempo do npc sempre
+		set .fase,0;
+		announce "O Evento ["+.nome_evento$+"] está aberto, você tem 2 minutos para entrar!",bc_all,0x00FFFF;
+		sleep 120000;//usar somente 1 sleep para o comando de iniciar imediatamente funcionar corretamente
+		announce "O Evento ["+.nome_evento$+"] fechou!",bc_all,0x00FFFF;
+		goto OnIniciarEvento;
+		end;
+
+	OnIniciarEvento:
+		set .eventoaberto,0;//Fecha evento, setando variável impedindo entrar no evento
+		set .eventoiniciado,1;//Inicia evento, setando variável sinalizando que evento está em andamento
+		if(getareausers(.mapa$,33,73,77,52)<5)//Se ter menos de 5 participantes, pular a primeira fase
+			goto OnPulaPrimeiraFase;
+		mapannounce .mapa$,"O evento vai iniciar em 5 segundos!",bc_all,0xAAFF00;
+		sleep 1000;
+		mapannounce .mapa$,"4...",bc_all,0xAAFF00;
+		sleep 1000;
+		mapannounce .mapa$,"3...",bc_all,0xAAFF00;
+		sleep 1000;
+		mapannounce .mapa$,"2...",bc_all,0xAAFF00;
+		sleep 1000;
+		mapannounce .mapa$,"1...",bc_all,0xAAFF00;
+		sleep 1000;
+		if(.eventoiniciado!=1) end;//Pra ter certeza que o evento não tenha iniciado sem abrir outra instancia ao mesmo tempo
+		//=================AGORA SIM INICIA O EVENTO PRA VALER=================
+		mapannounce .mapa$,"Está valendo!",bc_all,0xAAFF00;
+		setmapflag .mapa$,mf_pvp;
+		removemapflag .mapa$,mf_noskill;
+		setcell .mapa$,32,95,80,76,cell_basilica,1;//ativa basilica na área da segunda fase, pvp off
+		initnpctimer;
+		set .fase,1;
+		end;
+
+	OnTimer240000:
+		mapannounce .mapa$,"Em 1 minuto os baús irão aparecer...",bc_all,0xAAFF00;
+		end;
+		
+	OnTimer300000:
+		mapannounce .mapa$,"Os baús apareceram!",bc_all,0xAAFF00;
+		switch(rand(2)){
+			case 0:
+				monster .mapa$,35,71, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau1";
+				monster .mapa$,47,54, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau2";
+				monster .mapa$,59,71, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau3";
+				monster .mapa$,75,54, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau4";
+				end;
+			case 1:
+				monster .mapa$,39,54, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau1";
+				monster .mapa$,51,71, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau2";
+				monster .mapa$,63,54, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau3";
+				monster .mapa$,71,71, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau4";
+				end;
 		}
-		if(@rand_prize == 2)
-		{
-			getitem $id_prize[1],$quantity_prize[1];
-			announce "[ "+strcharinfo(0)+" ] abriu um Baú da Sorte e recebeu: "+$quantity_prize[1]+" "+getitemname($id_prize[1])+"",bc_all,0xFF70FF;
+//		monster .mapa$,316,51, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau";
+//		monster .mapa$,333,51, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau";
+//		monster .mapa$,340,51, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau";
+//		monster .mapa$,357,51, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau";
+		end;
+
+	OnTimer305000:
+		mapannounce .mapa$,"Vocês tem 30 segundos para abrirem os baús...",bc_all,0xAAFF00;
+		end;
+
+	OnPulaPrimeiraFase:
+		set .pulou_fase1,1;
+		initnpctimer;
+		setnpctimer 329999,strnpcinfo(3);
+		end;
+
+	OnTimer325000:
+		mapannounce .mapa$,"2ª Fase vai começar em 5 segundos!",bc_all,0xAAFF00;
+		end;
+
+	OnTimer326000:
+		mapannounce .mapa$,"2ª Fase vai começar em 4 segundos!",bc_all,0xAAFF00;
+		end;
+
+	OnTimer327000:
+		mapannounce .mapa$,"2ª Fase vai começar em 3 segundos!",bc_all,0xAAFF00;
+		end;
+
+	OnTimer328000:
+		mapannounce .mapa$,"2ª Fase vai começar em 2 segundos!",bc_all,0xAAFF00;
+		end;
+
+	OnTimer329000:
+		mapannounce .mapa$,"2ª Fase vai começar em 1 segundo!",bc_all,0xAAFF00;
+		end;
+
+	OnTimer330000:
+		goto OnFase2;
+		end;
+
+	OnAbriuBau1:
+		mapannounce .mapa$,"["+strcharinfo(0)+"] foi para próxima fase",bc_all,0xAAFF00;
+		warp .mapa$,37,81;
+		areawarp .mapa$,33,73,41,52,"prontera",156,182;
+		end;
+
+	OnAbriuBau2:
+		mapannounce .mapa$,"["+strcharinfo(0)+"] foi para próxima fase",bc_all,0xAAFF00;
+		warp .mapa$,49,81;
+		areawarp .mapa$,45,73,53,52,"prontera",156,182;
+		end;
+
+	OnAbriuBau3:
+		mapannounce .mapa$,"["+strcharinfo(0)+"] foi para próxima fase",bc_all,0xAAFF00;
+		warp .mapa$,61,81;
+		areawarp .mapa$,57,73,65,52,"prontera",156,182;
+		end;
+
+	OnAbriuBau4:
+		mapannounce .mapa$,"["+strcharinfo(0)+"] foi para próxima fase",bc_all,0xAAFF00;
+		warp .mapa$,73,81;
+		areawarp .mapa$,69,73,77,52,"prontera",156,182;
+		end;
+
+	OnFase2:
+		set .fase,2;
+		if(.pulou_fase1==1){
+			areawarp .mapa$,33,73,77,52,.mapa$,54,88;//move para a segunda fase
+			sleep 1000;
+			mapannounce .mapa$,"O evento vai iniciar em 5 segundos!",bc_all,0xAAFF00;
+			sleep 1000;
+			mapannounce .mapa$,"4...",bc_all,0xAAFF00;
+			sleep 1000;
+			mapannounce .mapa$,"3...",bc_all,0xAAFF00;
+			sleep 1000;
+			mapannounce .mapa$,"2...",bc_all,0xAAFF00;
+			sleep 1000;
+			mapannounce .mapa$,"1...",bc_all,0xAAFF00;
+			sleep 1000;
+			if(.eventoiniciado!=1) end;//Pra ter certeza que o evento não tenha iniciado sem abrir outra instancia ao mesmo tempo
+			mapannounce .mapa$,"Está valendo!",bc_all,0xAAFF00;
+			setmapflag .mapa$,mf_pvp;
+			removemapflag .mapa$,mf_noskill;
+		} else {
+			mapannounce .mapa$,"Começa a segunda fase!",bc_all,0xAAFF00;
 		}
-		if(@rand_prize == 3)
-		{
-			getitem $id_prize[2],$quantity_prize[2];
-			announce "[ "+strcharinfo(0)+" ] abriu um Baú da Sorte e recebeu: "+$quantity_prize[2]+" "+getitemname($id_prize[2])+"",bc_all,0xFF70FF;
+		areawarp .mapa$,33,73,77,52,"prontera",156,182;
+		setcell .mapa$,32,95,80,76,cell_basilica,0;//desativa basilica na área da segunda fase, pvp on
+		end;
+
+	OnTimer540000:
+		mapannounce .mapa$,"O baú vai aparecer em 1 minuto!",bc_all,0xAAFF00;
+		end;
+
+	OnTimer600000:
+		mapannounce .mapa$,"O baú apareceu!",bc_all,0xAAFF00;
+		switch(rand(2)){
+			case 0:
+				monster .mapa$,43,90, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau";
+				end;
+			case 1:
+				monster .mapa$,67,90, "Baú da Sorte",2900,1,""+strnpcinfo(1)+"::OnAbriuBau";
+				end;
 		}
-		if(@rand_prize == 4)
-		{
-			set Zeny,Zeny + $quantity_zeny;
-			announce "[ "+strcharinfo(0)+" ] abriu um Baú da Sorte e recebeu: "+$quantity_zeny+"z",bc_all,0xFF70FF;
+		end;
+
+	OnAbriuBau:
+		set @sorteio,$quantidade_premios_sortudo+1;
+		set @rand_premio,rand(@sorteio);//atribui valor aleatorio até qntdade maxima de premios
+		if((@rand_premio<$quantidade_premios_sortudo)&&($quantidade_premios_sortudo!=0)){//se @rand_premio é menor q array dos premios entao tem premio
+			getitem($id_premio_sortudo[@rand_premio],$quantidade_premio_sortudo[@rand_premio]);//Entrega prêmio aleatório com nome do char
+			announce "["+strcharinfo(0)+"] abriu um Baú da Sorte e recebeu: "+$quantidade_premio_sortudo[@rand_premio]+" "+getitemname($id_premio_sortudo[@rand_premio])+"",bc_all,0xFF70FF;
+		} else {//se não tem prêmio, tem zeny
+			set Zeny,Zeny + $zeny_evento_sortudo;
+			announce "["+strcharinfo(0)+"] abriu um Baú da Sorte e recebeu: "+$zeny_evento_sortudo+" zenys",bc_all,0xFF70FF;
 		}
-		sleep 2000;
+		sleep2 2000;
 		warp "prontera",156,182;
 		end;
 
+	OnFinalizarEvento:
+		set .fase,0;
+		set .eventoaberto,0;
+		set .eventoiniciado,0;
+		removemapflag .mapa$,mf_pvp;
+		setmapflag .mapa$,mf_noskill;
+		mapwarp .mapa$,"prontera",156,182;
+		killmonsterall .mapa$;
+		awake strnpcinfo(3);
+		initnpctimer;
+		stopnpctimer;
+		detachnpctimer;
+		end;
+
 	OnPCDieEvent:
-		if(strcharinfo(3) == "quiz_02")
+		if((strcharinfo(3)==.mapa$)&&(.eventoiniciado==1))//Se jogador morreu no mapa do evento que está em andamento
 		{
 			dispbottom "Você perdeu.";
 			warp "SavePoint",0,0;
@@ -175,16 +338,75 @@ prontera,165,205,6	script	Sortudo	869,{
 		}
 		end;
 
+	//======================SETAR PRINCIPAIS VARIÁVEIS======================
 	OnInit:
-		set $eventosortudo,0;
-		waitingroom "Sortudo",0;
+		set .npc$,"[^0000ffSortudo^000000]";//=======================Nome do NPC que aparece nas mensagens
+		set .mapa$,"quiz_02";//======================================Mapa do evento
+		set .lvlgm,99;//=============================================Nível de GM necessário para manipular evento
+		set .nome_evento$,"Sortudo";//===============================Nome do evento
+		set .eventoaberto,0;//=======================================Inicia o npc com o evento fechado
+		set .eventoiniciado,0;//=====================================Inicia o npc com o evento não iniciado
+		waitingroom .nome_evento$,0;//===============================Cria sala no npc com nome do evento
+		bindatcmd .nome_evento$,strnpcinfo(3)+"::OnAtcommand";//=====Cria comando com o nome do evento para GM manipular evento
+		removemapflag .mapa$,mf_pvp;//===============================Desabilita PvP no mapa ao iniciar o npc
+		set .capacidade_cercado,5;//=================================Capacidade de jogadores em um cercado
+		set .capacidade_maxima,.capacidade_cercado*4;//==============Capacidade maxima de jogadores no evento
+		end;
+
+	OnAtcommand:
+		if(getgroupid()>=lvlgm){
+			mes .npc$;
+			mes "O que deseja fazer ^FF4500"+strcharinfo(0)+"^000000?";
+			switch (select("Abrir Evento","Finalizar Evento","Iniciar Agora!","Aparecer Baús FASE 1","Aparecer Baús FASE 2"))
+			{
+				case 1:
+					close2;
+					dispbottom "["+.nome_evento$+"] Evento aberto";
+					awake strnpcinfo(3);
+					goto OnAbrirEvento;
+					end;
+				case 2:
+					close2;
+					mapannounce .mapa$,"O Evento ["+.nome_evento$+"] finalizou!",bc_all,0xAAFF00;
+					dispbottom "["+.nome_evento$+"] Evento finalizado";
+					goto OnFinalizarEvento;
+					end;
+				case 3:
+					close2;
+					dispbottom "["+.nome_evento$+"] O evento precisa estar aberto e não ter iniciado.";
+					if((.eventoaberto==1)&&(.eventoiniciado==0))//Precisa estár aberto e não iniciado
+						awake strnpcinfo(3);//Somente acordar do sleep senao acionará 2 instancias ao mesmo tempo
+					end;
+				case 4:
+					close2;
+					dispbottom "["+.nome_evento$+"] O evento precisa estar fechado e ter iniciado na fase 1.";
+					if((.eventoaberto==0)&&(.eventoiniciado==1)&&(.fase==1)){//Precisa estár fechado e iniciado na fase 1
+						awake strnpcinfo(3);
+						setnpctimer 299999,strnpcinfo(3);
+					}
+					end;
+				case 5:
+					close2;
+					dispbottom "["+.nome_evento$+"] O evento precisa estar fechado e ter iniciado na fase 2.";
+					if((.eventoaberto==0)&&(.eventoiniciado==1)&&(.fase==2)){//Precisa estár fechado e iniciado na fase 2
+						awake strnpcinfo(3);
+						setnpctimer 599999,strnpcinfo(3);
+					}
+					end;
+			}
+		}
 		end;
 }
-quiz_02	mapflag	nomemo
+// Map-Flags
 quiz_02	mapflag	nowarp
 quiz_02	mapflag	nowarpto
-quiz_02	mapflag	noicewall
 quiz_02	mapflag	noteleport
 quiz_02	mapflag	nosave	SavePoint
-quiz_02	mapflag	noreturn
+quiz_02	mapflag	nomemo
 quiz_02	mapflag	nobranch
+quiz_02	mapflag	nopenalty
+quiz_02	mapflag	monster_noteleport
+quiz_02	mapflag	noreturn
+//quiz_02	mapflag	pvp//----------------será ativado somente quando iniciar o evento
+quiz_02	mapflag	partylock
+//quiz_02	mapflag	loadevent

@@ -27,7 +27,7 @@ prontera,128,194,7	script	Gus::Arena PVP	734,2,2,{
 			close;
 	}
 	OnTimer15000:
-		delwaitingroom "Arena PVP";
+		delwaitingroom ""+strnpcinfo(3);
 		waitingroom "     PvP   ["+getmapusers("cell_game")+"]",0;
 		initnpctimer;
 		end;
@@ -47,7 +47,7 @@ prontera,128,194,7	script	Gus::Arena PVP	734,2,2,{
 		end;
 	OnPCLogoutEvent:
 		//set #ponto,#ponto+50;
-		delwaitingroom "Arena PVP";
+		delwaitingroom ""+strnpcinfo(3);
 		waitingroom "     PvP   ["+getmapusers("cell_game")+"]",0;
 		end;
 	OnTouch:
@@ -58,7 +58,7 @@ prontera,128,194,7	script	Gus::Arena PVP	734,2,2,{
 		getmapxy @map$,@x,@y,0;
 		if(@map$ == "cell_game") {
 			dispbottom "Você entrou no PVP";
-			delwaitingroom "Arena PVP";
+			delwaitingroom ""+strnpcinfo(3);
 			waitingroom "     PvP   ["+getmapusers("cell_game")+"]",0;
 		}
 		end;
@@ -92,7 +92,7 @@ prontera,154,198,5	script	Duelista::Arenax1	666,1,1,{
 	end;
 	OnTimer2000:
 		initnpctimer;//----------------------------------------------------------------------------->iniciar novamente para verificar a cada 2 segundos
-		delwaitingroom "Arenax1";
+		delwaitingroom ""+strnpcinfo(3);
 		waitingroom "    Arena   ["+getmapusers("arena")+"]",0;
 		if(getareausers("arena",35,62,64,35)>2){
 			mapannounce "arena","Atenção! Mais de duas pessoas na arena de duelo! Todos serão retirados...",bc_all,0xAAFF00;
@@ -102,7 +102,7 @@ prontera,154,198,5	script	Duelista::Arenax1	666,1,1,{
 	OnPCLoadMapEvent:
 		getmapxy @map$,@x,@y,0;
 		if(@map$ == "arena") {
-			delwaitingroom "Arenax1";
+			delwaitingroom ""+strnpcinfo(3);
 			waitingroom "    Arena   ["+getmapusers("arena")+"]",0;
 		}
 		end;
@@ -121,7 +121,7 @@ arena,28,53,6	script	Organizadora de Duelos::AssistenteDuel	655,{
 			if(select("Sim","Não")==2) close;
 			if(getareausers("arena",35,62,64,35)==1){//pode ser movido enquanto a janela estiver aberta
 				mapannounce "arena",""+strcharinfo(0)+" cansou de esperar e saiu da arena de duelo...",bc_all,0xAAFF00;
-				goto OnDecideDuelo;
+				goto OnFimDuel;
 				end;
 			}
 			mes "Tarde demais!";
@@ -133,7 +133,7 @@ arena,28,53,6	script	Organizadora de Duelos::AssistenteDuel	655,{
 			if(select("Sim","Não")==2) close;
 			if(getareausers("arena",35,62,64,35)==2){//pode ser movido enquanto a janela estiver aberta
 				mapannounce "arena",""+strcharinfo(0)+" perdeu! não aguentou e entregou o duelo...",bc_all,0xAAFF00;
-				goto OnDecideDuelo;
+				goto OnFimDuel;
 			}
 			mes "Tarde demais!";
 			close;
@@ -151,7 +151,7 @@ arena,28,53,6	script	Organizadora de Duelos::AssistenteDuel	655,{
 				mes .nome$;
 				mes "Ok...";
 				close2;
-				delwaitingroom "Duelar";
+				delwaitingroom ""+strnpcinfo(3);
 				npctalk ""+strcharinfo(0)+" desistiu de ser o próximo a duelar!";
 				sleep 5000;
 				waitingroom "Duelar",0;
@@ -170,7 +170,7 @@ arena,28,53,6	script	Organizadora de Duelos::AssistenteDuel	655,{
 		if(select("Sim","Não")==2) close;
 		if(callfunc("addProximo",getcharid(0),strcharinfo(0))){
 			mes "Ok! você é o próximo.";
-			delwaitingroom "Duelar";
+			delwaitingroom ""+strnpcinfo(3);
 			npctalk ""+strcharinfo(0)+" será o próximo a duelar!";
 			sleep 5000;
 			waitingroom "Duelar",0;
@@ -207,8 +207,10 @@ arena,28,53,6	script	Organizadora de Duelos::AssistenteDuel	655,{
 		sleep2 1000;
 		mapannounce "arena","1...",bc_all,0xAAFF00;
 		sleep2 1000;
-		mapannounce "arena","Valendo!",bc_all,0xAAFF00;
 		callfunc "Destrava";
+		if(getareausers("arena",35,62,64,35)==0)
+			goto OnFimDuel;
+		mapannounce "arena","Valendo!",bc_all,0xAAFF00;
 		setmapflag "arena",mf_pvp;
 		initnpctimer;
 		end;
@@ -278,6 +280,8 @@ arena,28,53,6	script	Organizadora de Duelos::AssistenteDuel	655,{
 		goto OnFimDuel;
 		end;
 	OnFimDuel:
+		removemapflag "arena",mf_pvp;
+		callfunc "Destrava";
 		areawarp "arena",35,62,64,35,"arena",33,50;//---------------------------------------------------------tira todo mundo da arena e zera variáveis
 		set $@duelando1,0;
 		set $@duelando2,0;
@@ -355,7 +359,7 @@ arena,17,50,6	script	Assistente	417,{
 	if(select("Sim","Não")==2) close;
 	warp "prontera",156,187;
 	OnInit:
-		delwaitingroom "Assistente";
+		delwaitingroom ""+strnpcinfo(3);
 		waitingroom "Sair da Arena",0;
 }
 

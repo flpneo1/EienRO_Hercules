@@ -18,16 +18,16 @@
 			set tempo_online,tempo_online+.interval;
 			getmapxy( .@map$, .@x, .@y, 0 );
 			if(.@map$==@map$ && .@x==@x && .@y==@y) {//verifica se são as mesmas cordenadas map,x,y (afk)
-				set tempoafk,tempoafk+.interval;
+				set tempo_afk,tempo_afk+.interval;
 			} else { // senao reseta o tempo pra 0
-				set tempoafk,0;
+				set tempo_afk,0;
 			}
 			set @map$,.@map$; set @x,.@x; set @y,.@y;//atualiza cordenada
-			if(tempoafk>=.max_idle){//se atingir o limite
+			if(tempo_afk>=.max_idle){//se atingir o limite
 				dispbottom "Você ficou mais de 20 minutos ausente.";
 				dispbottom "Tempo online interrompido, relogue novamente para ativar.";
 				set tempo_online,0;
-				set tempoafk,0;
+				set tempo_afk,0;
 				end;
 			}
 			if(tempo_online>=3600){
@@ -49,6 +49,17 @@
 			}
 			addtimer .interval *1000, strnpcinfo(3)+"::OnCheck";
 		}
+		end;
+
+	OnInit:
+		bindatcmd "tempoonline",strnpcinfo(3)+"::OnAtcommand";//=====Cria comando com o nome do evento para GM manipular evento
+		end;
+
+	OnAtcommand:
+		set @tempo_online, tempo_online/60;
+		set @tempo_afk, tempo_afk/60;
+		dispbottom ""+@tempo_online+" minutos online";
+		dispbottom ""+@tempo_afk+" minutos afk";
 		end;
 }
 

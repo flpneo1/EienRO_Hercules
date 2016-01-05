@@ -11,3 +11,8 @@ map_server_db: eienhercules
 log_db_id: root
 log_db_pw: vertrigo
 log_db_db: eienhercules
+//Endereço do banco de dados//Geralmente localhost
+//sql.db_hostname: 192.168.2.7
+//char_server_ip: 192.168.2.7
+//map_server_ip: 192.168.2.7
+//log_db_ip: 192.168.2.7

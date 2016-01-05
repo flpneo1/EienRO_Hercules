@@ -2,8 +2,8 @@ userid: user123
 passwd: pass123
 server_name: EienRO
 wisp_server_name: Bem vindo ao EienRO
-login_ip: 127.0.0.1
-char_ip: neo.redirectme.net
+//login_ip: 192.168.2.7//IP onde se encontra o login server executando (geralmente localhost)
+char_ip: neo.redirectme.net//IP do proprio char server (internet)
 start_point: prontera,156,187
 start_items: 1201,1,0,2301,1,0
 start_zeny: 300

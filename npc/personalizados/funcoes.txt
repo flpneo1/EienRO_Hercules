@@ -80,7 +80,7 @@ function	script	Trava	{
 	setcell "arena",53,51,53,49,cell_shootable,0;//risco esquerda
 	setcell "arena",55,51,55,49,cell_shootable,0;//risco direita
 	setcell "arena",53,49,55,49,cell_shootable,0;//risco baixo
-	dispbottom "Travas Ativadas!";
+//	dispbottom "Travas Ativadas!";
 	return 1;
 	end;
 }
@@ -101,7 +101,7 @@ function	script	Destrava	{
 	setcell "arena",53,51,53,49,cell_shootable,1;//risco esquerda
 	setcell "arena",55,51,55,49,cell_shootable,1;//risco direita
 	setcell "arena",53,49,55,49,cell_shootable,1;//risco baixo
-	dispbottom "Travas Desativadas!";
+//	dispbottom "Travas Desativadas!";
 	return 1;
 	end;
 }
