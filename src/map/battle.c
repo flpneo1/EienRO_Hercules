@@ -1353,9 +1353,10 @@ int64 battle_calc_defense(int attack_type, struct block_list *src, struct block_
 			mdef2 = status->calc_mdef2(target, tsc, mdef2, false); // status mdef(RE)
 			mdef = status->calc_mdef(target, tsc, mdef, false); // equip mde(RE)
 #endif
-			if( flag&1 )
+			if( flag&1 ){
 				mdef = 0;
-
+				mdef2 = 0;//Neo alterações, add linha, estava ignorando somente defesa de equipamentos, não a segunda parte de status (bonus bIgnoreMdefRace,RC_NonBoss; com essa linha ignora mdef1 e mdef2)
+			}
 			if(sd) {
 				i = sd->ignore_mdef[is_boss(target)?RC_BOSS:RC_NONBOSS];
 				i += sd->ignore_mdef[tstatus->race];
@@ -1363,7 +1364,7 @@ int64 battle_calc_defense(int attack_type, struct block_list *src, struct block_
 				{
 					if (i > 100) i = 100;
 					mdef -= mdef * i/100;
-					//mdef2-= mdef2* i/100;
+					//mdef2-= mdef2* i/100;//Neo alterações, linha comentada para bonus bIgnoreMdefRate,n; ignorar somente mdef de equip
 				}
 			}
 		#ifdef RENEWAL

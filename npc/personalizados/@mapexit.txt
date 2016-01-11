@@ -2,43 +2,60 @@
 
 	OnInit:
 			bindatcmd "mexit",strnpcinfo(3)+"::OnAtcommand";//@mexit irá reiniciar o servidor dentro de 3 minutos
-	end;
+		end;
 
 	OnAtcommand:
-		if (getgmlevel()==99){
+		if (getgmlevel()==99)
 			initnpctimer;
-			announce "ATENÇÃO!", bc_all;
-		}
-	end;
+		end;
+
+	OnClock0600:
+		if(gettime(4)==6)//Quando for segunda-feira as 6 da manhã, reinicia o servidor.
+			initnpctimer;
+		end;
+
+	OnTimer100:
+		announce "ATENÇÃO!", bc_all;
+		end;
+
 	OnTimer3000:
 		announce "O servidor será reiniciado dentro de 3 minutos devido a manutenções. Por favor, aguarde alguns instantes para logar novamente.", bc_all;
-	end;
+		end;
+
 	OnTimer123000:
 		announce "O servidor será reiniciado em 1 minuto.", bc_all;
-	end;
+		end;
+
 	OnTimer153000:
 		announce "O servidor será reiniciado em 30 segundos.", bc_all;
-	end;
+		end;
+
 	OnTimer173000:
 		announce "O servidor será reiniciado em 10 segundos.", bc_all;
-	end;
+		end;
+
 	OnTimer178000:
 		announce "O servidor será reiniciado em 5 segundos.", bc_all;
-	end;
+		end;
+
 	OnTimer179000:
 		announce "O servidor será reiniciado em 4 segundos.", bc_all;
-	end;
+		end;
+
 	OnTimer180000:
 		announce "O servidor será reiniciado em 3 segundos.", bc_all;
-	end;
+		end;
+
 	OnTimer181000:
 		announce "O servidor será reiniciado em 2 segundos.", bc_all;
-	end;
+		end;
+
 	OnTimer182000:
 		announce "O servidor será reiniciado em 1 segundo.", bc_all;
-	end;
+		end;
+
 	OnTimer183000:
 		stopnpctimer;
 		atcommand "@mapexit";
-	end;
+		end;
 }

@@ -65,6 +65,13 @@ prontera,128,194,7	script	Gus::Arena PVP	734,2,2,{
 	OnInit:
 		waitingroom "     PvP   ["+getmapusers("cell_game")+"]",0;
 		initnpctimer;
+		bindatcmd "pvp",strnpcinfo(3)+"::OnAtcommand";
+		end;
+	OnAtcommand:
+		getmapxy @map$,@x,@y,0;
+		if(@map$ != "cell_game") {
+			warp "cell_game",0,0;
+		}
 		end;
 	end;
 }

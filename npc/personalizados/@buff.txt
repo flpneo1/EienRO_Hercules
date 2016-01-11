@@ -1,15 +1,13 @@
 -	script	BUFF	-1,{
 
 	OnInit:
-	
 		.hp = 100;		// Percentual de cura do HP
 		.sp = 100;		// Percentual de cura do SP
-
 		// Addons
 		.price = 10000; 	// Preço por uso (em Zeny)
 		.buff = 1;		// Buff players as well? (0: no, 1: yes)
 		.repair = 0;	// Reparar equipamentos quebrados? (0: no, 1: yes)
-		.delay = 360;		// Delay para uso (em segundos)
+		.delay = 60;		// Delay para uso (em segundos)
 		
 		bindatcmd "buff",strnpcinfo(3)+"::OnAtcommand";
 	end;
@@ -19,14 +17,12 @@
 		message strcharinfo(0), "Você precisa esperar "+ (@pdelay - gettimetick(2)) +" segundos.";
 		end;
 	}
-
-	if (BaseLevel > 70) .price = .price+90000;
+	if (BaseLevel > 99) .price = .price+90000;
 	if (.price) {
 		if (Zeny < .price) {
 			message strcharinfo(0), "Você não tem Zeny suficiente, O serviço custa "+ .price +"z.";
 			end;
 		}
-		
 		Zeny -= .price;
 	}
 

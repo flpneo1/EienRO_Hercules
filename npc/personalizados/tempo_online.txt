@@ -52,13 +52,18 @@
 		end;
 
 	OnInit:
-		bindatcmd "tempoonline",strnpcinfo(3)+"::OnAtcommand";//=====Cria comando com o nome do evento para GM manipular evento
+		bindatcmd "tempoon",strnpcinfo(3)+"::OnAtcommand";//=====Cria comando para ver tempo online
+		bindatcmd "tempoafk",strnpcinfo(3)+"::OnAtcommand2";//=====Cria comando para ver tempo afk
 		end;
 
 	OnAtcommand:
 		set @tempo_online, tempo_online/60;
-		set @tempo_afk, tempo_afk/60;
 		dispbottom ""+@tempo_online+" minutos online";
+		message strcharinfo(0),"@tempoafk";
+		end;
+
+	OnAtcommand2:
+		set @tempo_afk, tempo_afk/60;
 		dispbottom ""+@tempo_afk+" minutos afk";
 		end;
 }
@@ -66,7 +71,12 @@
 prontera,182,215,5	script	Relojoeiro::RelojoeiroProntera	804,{
 	set .nome$,"[^0000FFRelojoeiro^000000]";//Nome do NPC
 	mes .nome$;
+	set @tempo_online, 60-(tempo_online/60);
 	mes "Sou o relojoeiro de Prontera...";
+	if((@tempo_online!=0)&&(@tempo_online!=1))
+		mes "Faltam ^FF0000"+@tempo_online+"^000000 minutos";
+	if(@tempo_online==1)
+		mes "Falta ^FF00001^000000 minuto";
 	if(@tempo_on_rand==1){
 		callfunc "pegapremio";
 	}
@@ -75,7 +85,12 @@ prontera,182,215,5	script	Relojoeiro::RelojoeiroProntera	804,{
 morocc,169,105,5	script	Relojoeiro::RelojoeiroMorroc	804,{
 	set .nome$,"[^0000FFRelojoeiro^000000]";//Nome do NPC
 	mes .nome$;
+	set @tempo_online, 60-(tempo_online/60);
 	mes "Sou o relojoeiro de Morroc...";
+	if((@tempo_online!=0)&&(@tempo_online!=1))
+		mes "Faltam ^FF0000"+@tempo_online+"^000000 minutos";
+	if(@tempo_online==1)
+		mes "Falta ^FF00001^000000 minuto";
 	if(@tempo_on_rand==2){
 		callfunc "pegapremio";
 	}
@@ -84,7 +99,12 @@ morocc,169,105,5	script	Relojoeiro::RelojoeiroMorroc	804,{
 geffen,127,64,5	script	Relojoeiro::RelojoeiroGeffen	804,{
 	set .nome$,"[^0000FFRelojoeiro^000000]";//Nome do NPC
 	mes .nome$;
+	set @tempo_online, 60-(tempo_online/60);
 	mes "Sou o relojoeiro de Geffen...";
+	if((@tempo_online!=0)&&(@tempo_online!=1))
+		mes "Faltam ^FF0000"+@tempo_online+"^000000 minutos";
+	if(@tempo_online==1)
+		mes "Falta ^FF00001^000000 minuto";
 	if(@tempo_on_rand==3){
 		callfunc "pegapremio";
 	}
@@ -93,7 +113,12 @@ geffen,127,64,5	script	Relojoeiro::RelojoeiroGeffen	804,{
 payon,165,222,5	script	Relojoeiro::RelojoeiroPayon	804,{
 	set .nome$,"[^0000FFRelojoeiro^000000]";//Nome do NPC
 	mes .nome$;
+	set @tempo_online, 60-(tempo_online/60);
 	mes "Sou o relojoeiro de Payon...";
+	if((@tempo_online!=0)&&(@tempo_online!=1))
+		mes "Faltam ^FF0000"+@tempo_online+"^000000 minutos";
+	if(@tempo_online==1)
+		mes "Falta ^FF00001^000000 minuto";
 	if(@tempo_on_rand==4){
 		callfunc "pegapremio";
 	}

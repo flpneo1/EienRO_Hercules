@@ -58,7 +58,7 @@ homunculus_S_max_level: 99//150
 //itens.conf----------------------
 ignore_items_gender: no
 item_use_interval: 100
-gtb_sc_immunity: 100
+//gtb_sc_immunity: 0//Padrão 50 Se GTB reduzir 50% ou mais do dano magico, usuário fica imune também a status
 
 //misc.conf-----------------------
 duel_time_interval: 0
@@ -94,8 +94,11 @@ max_parameter: 200
 max_third_parameter: 130
 max_baby_parameter: 180
 max_baby_third_parameter: 108
-max_def: 99
-over_def_bonus: 100
+max_def: 100//padrão 99
+//over_def_bonus: 100//padrão 0, estava 100
 max_cart_weight: 8000
-show_hp_sp_drain: yes
+show_hp_sp_drain: yes//padrão no
 bone_drop: 2
+
+//skill.conf---------------------
+castrate_dex_scale: 200

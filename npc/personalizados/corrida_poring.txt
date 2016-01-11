@@ -1,13 +1,17 @@
 // Capuche cleaning Base on the poring race by Zell_ff8, xianz, Neko, for fun
 
 prontera,146,205,3	script	Corrida Poring	91,{
+	if(gettime(2)>=20)
+		set .minutos_abrir,20-gettime(2)+60;//Seta variável com minutos que falta para abrir o evento
+	if(gettime(2)<20)
+		set .minutos_abrir,20-gettime(2);//No caso é todo minuto 20 que abre o evento
 cutin "katsua01",2;
 	if( .access_Prace == 0 ) {
 		mes "[Corrida Poring]";
 		mes "A corrida já terminou.";
 		mes "Espera até a próxima vez para participar.";
 		mes "Horário de abertura a cada 1 hora.";
-		mes "Iniciando em 10:20, 11:20, 12:20...";
+		mes "Abrirá em: ^FF0000"+.minutos_abrir+"^000000 minutos.";
 		close2;
 		cutin "",255;
 		end;
